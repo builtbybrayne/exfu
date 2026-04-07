@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "exfu-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/al/Studio/projects/exfu_website/.claude/dev.sh"],
+      "port": 4321
+    }
+  ]
+}

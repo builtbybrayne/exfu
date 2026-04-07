@@ -1,0 +1,125 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'ExFu | Your AI PA, Set Up in One Afternoon',
+  description = 'Get from "I should use AI" to "I love working with it." One afternoon. ExFu sets up your AI personal assistant so you can stop wondering and start using.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://exfu.ai');
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Preload headline font -->
+    <link
+      rel="preload"
+      href="/fonts/source-serif-4-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/exfu_favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://exfu.ai/images/og-image.png" />
+    <meta property="og:site_name" content="ExFu" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://exfu.ai/images/og-image.png" />
+
+    <!-- Analytics -->
+    <script async src="https://plausible.io/js/pa-zPZA-fOwXjWp08gy6wMrE.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ExFu",
+      "url": "https://exfu.ai",
+      "description": description,
+      "founder": {
+        "@type": "Person",
+        "name": "Alastair Brayne",
+        "jobTitle": "AI Consultant"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "AI Personal Assistant Setup"
+    })} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <slot />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-accent);
+    color: white;
+    font-size: var(--text-small);
+    font-weight: 500;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+</style>

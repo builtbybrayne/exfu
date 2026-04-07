@@ -1,0 +1,290 @@
+---
+const tiers = [
+  {
+    number: 0,
+    label: 'Only uses AI embedded in existing products',
+    sublabel: '(84% of people)',
+    variant: 'muted' as const,
+  },
+  {
+    number: 1,
+    label: 'Chatbot conversations',
+    annotation: "You're here",
+    variant: 'active' as const,
+  },
+  {
+    number: 2,
+    label: 'AI acts as your personal PM, chief of staff, and digital dogsbody',
+    annotation: 'The real win',
+    variant: 'highlighted' as const,
+  },
+  {
+    number: 3,
+    label: 'Autonomous agents',
+    annotation: 'You worry everyone is here',
+    variant: 'faded' as const,
+  },
+];
+---
+
+<div class="tier-diagram" aria-label="AI adoption tiers showing your path from chatbot conversations to AI personal assistant">
+  <div class="tier-track">
+    {tiers.map((tier, i) => (
+      <div
+        class:list={['tier', `tier--${tier.variant}`]}
+        style={`--stagger: ${i}`}
+      >
+        <div class="tier-number">
+          <span>{tier.number}</span>
+        </div>
+        <div class="tier-content">
+          <p class="tier-label">{tier.label}</p>
+          {tier.sublabel && <p class="tier-sublabel">{tier.sublabel}</p>}
+        </div>
+        {tier.annotation && (
+          <span class="tier-annotation" style={`--stagger-annotation: ${i}`}>
+            <span class="tier-annotation-arrow">&larr;</span> {tier.annotation}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .tier-diagram {
+    width: 100%;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  .tier-track {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .tier {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs) var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 6px;
+    position: relative;
+    /* Hero load animation */
+    opacity: 0;
+    transform: translateY(0.75rem);
+    animation: tier-enter 0.5s var(--ease-out) forwards;
+    animation-delay: calc(var(--stagger) * 100ms + 200ms);
+  }
+
+  .tier-number {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.125rem;
+  }
+
+  .tier-content {
+    flex: 1 1 60%;
+    min-width: 0;
+  }
+
+  .tier-label {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: var(--text-small);
+    line-height: 1.4;
+    max-width: none;
+  }
+
+  .tier-sublabel {
+    font-size: var(--text-label);
+    color: var(--color-muted);
+    max-width: none;
+    margin-top: 0.125rem;
+  }
+
+  .tier-annotation {
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    /* Staggered fade in after tiers */
+    opacity: 0;
+    animation: annotation-enter 0.4s var(--ease-out) forwards;
+    animation-delay: calc(var(--stagger-annotation) * 80ms + 700ms);
+  }
+
+  .tier-annotation-arrow {
+    opacity: 0.6;
+  }
+
+  /* --- Tier variants --- */
+
+  /* Tier 0: muted, receded */
+  .tier--muted {
+    opacity: 0;
+    animation: tier-enter 0.5s var(--ease-out) forwards;
+    animation-delay: calc(var(--stagger) * 100ms + 200ms);
+  }
+  .tier--muted .tier-number {
+    background: rgba(138, 132, 124, 0.2);
+    color: var(--color-muted);
+  }
+  .tier--muted .tier-label {
+    color: var(--color-text-dark);
+    font-weight: 500;
+  }
+
+  /* Tier 1: active, you're here */
+  .tier--active .tier-number {
+    background: var(--color-accent);
+    color: white;
+  }
+  .tier--active .tier-label {
+    color: var(--color-text-dark);
+    font-weight: 500;
+  }
+  .tier--active .tier-annotation {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  /* Tier 2: highlighted, the real win */
+  .tier--highlighted {
+    background: rgba(186, 67, 47, 0.08);
+    border: 1.5px solid rgba(186, 67, 47, 0.5);
+    box-shadow: 0 0 30px rgba(186, 67, 47, 0.08);
+    padding: var(--space-md);
+  }
+  .tier--highlighted .tier-number {
+    background: var(--color-accent);
+    color: white;
+    font-weight: 500;
+  }
+  .tier--highlighted .tier-label {
+    color: var(--color-text-dark);
+    font-weight: 500;
+    font-size: var(--text-body);
+  }
+  .tier--highlighted .tier-annotation {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  /* Tier 3: faded, de-emphasized */
+  .tier--faded {
+    opacity: 0;
+    animation: tier-enter-faded 0.5s var(--ease-out) forwards;
+    animation-delay: calc(var(--stagger) * 100ms + 200ms);
+  }
+  .tier--faded .tier-number {
+    background: rgba(138, 132, 124, 0.12);
+    color: var(--color-muted-dark);
+  }
+  .tier--faded .tier-label {
+    color: var(--color-muted);
+  }
+  .tier--faded .tier-annotation {
+    background: rgba(138, 132, 124, 0.12);
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+
+  /* --- Animations --- */
+  @keyframes tier-enter {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes tier-enter-faded {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes annotation-enter {
+    from {
+      opacity: 0;
+      transform: translateX(-0.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* --- Tablet+ --- */
+  @media (min-width: 640px) {
+    .tier {
+      flex-wrap: nowrap;
+    }
+  }
+
+  /* --- Desktop: wider layout --- */
+  @media (min-width: 1024px) {
+    .tier-track {
+      gap: var(--space-sm);
+    }
+
+    .tier {
+      padding: var(--space-sm) var(--space-lg);
+    }
+
+    .tier--highlighted {
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .tier-label {
+      font-size: var(--text-body);
+    }
+
+    .tier--highlighted .tier-label {
+      font-size: var(--text-body-lg);
+    }
+
+    .tier-number {
+      width: 2.75rem;
+      height: 2.75rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .tier,
+    .tier--muted,
+    .tier--faded,
+    .tier-annotation {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
+    .tier--faded {
+      opacity: 0.5;
+    }
+  }
+</style>

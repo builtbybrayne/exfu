@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Definition from '../components/Definition.astro';
+import Recognition from '../components/Recognition.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Nav />
+  <main id="main">
+    <Hero />
+
+    <Definition
+      term="ExFu"
+      pronunciation="/ˈeks.fuː/"
+      partOfSpeech="noun"
+      definition="Executive function. The cognitive processes that let you plan, prioritise, start things, and see them through. The thing there's never enough of."
+      variant="light"
+    />
+
+    <Recognition />
+
+    <Definition
+      term="ExFu"
+      pronunciation="/ˈeks.fuː/"
+      partOfSpeech="noun"
+      definition="Execution fu. Like kung fu, but for getting things done. The craft of turning intent into action, with AI fighting in your corner."
+      variant="dark"
+    />
+
+    <HowItWorks />
+
+    <Definition
+      term="ExFu"
+      pronunciation="/ˈeks.fuː/"
+      partOfSpeech="adj."
+      definition="Executive, functioning. The version of you that's on top of it. Not because you grew more arms, but because you got smarter tools."
+      variant="light"
+    />
+
+    <About />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

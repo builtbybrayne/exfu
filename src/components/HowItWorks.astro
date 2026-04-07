@@ -1,0 +1,136 @@
+<section id="how-it-works" class="how-it-works">
+  <div class="how-inner section-container">
+    <div class="how-header reveal">
+      <h2>One afternoon. Done.</h2>
+    </div>
+
+    <div class="how-columns">
+      <div class="how-col reveal">
+        <h3 class="how-col-label">What happens</h3>
+        <p>
+          Video call. Shared screen. We build your AI assistant together.
+          I explain what we're doing and why, so you understand the setup,
+          not just use it.
+        </p>
+      </div>
+      <div class="how-col reveal">
+        <h3 class="how-col-label">What you leave with</h3>
+        <p>
+          An AI assistant that knows your context, your preferences, how you
+          work, and how to help you get stuff done. And you know how to keep
+          it sharp.
+        </p>
+      </div>
+    </div>
+
+    <blockquote class="how-analogy reveal">
+      <p>
+        It's like cooking. A trained chef can improvise from anything in the
+        cupboard because they understand the principles. The rest of us need
+        recipes. You're not going to chef school, and you don't need to. You
+        need someone to show you the essential gadgets, the core recipes, and
+        the basic rules of flavour, so you can start improvising on your own.
+      </p>
+    </blockquote>
+
+    <div class="how-cta reveal">
+      <a href="mailto:letsgo@exfu.ai?subject=ExFu%20Session" class="btn-primary">Book a Session</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background: white;
+    padding-block: var(--section-padding);
+  }
+
+  .how-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .how-header h2 {
+    font-size: var(--text-display);
+    color: var(--color-primary);
+  }
+
+  /* Two-column layout */
+  .how-columns {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .how-col-label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .how-col p {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-text-light);
+  }
+
+  /* Cooking analogy */
+  .how-analogy {
+    max-width: none;
+    padding: var(--space-xl) var(--space-2xl);
+    background: var(--color-surface-light);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .how-analogy p {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text-light);
+    font-style: italic;
+    max-width: none;
+  }
+
+  /* CTA */
+  .how-cta {
+    padding-top: var(--space-sm);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  @media (min-width: 768px) {
+    .how-columns {
+      flex-direction: row;
+      gap: var(--space-3xl);
+    }
+
+    .how-col {
+      flex: 1;
+    }
+
+    .how-analogy {
+      padding: var(--space-2xl) var(--space-3xl);
+    }
+  }
+</style>

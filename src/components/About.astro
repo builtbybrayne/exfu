@@ -1,0 +1,176 @@
+<section id="about" class="about">
+  <div class="about-inner section-container">
+    <div class="about-top">
+      <div class="about-content reveal">
+        <h2>Who's setting this up with&nbsp;you</h2>
+
+        <p class="about-name">Alastair Brayne</p>
+
+        <div class="about-chips">
+          <span class="chip">4 years hands-on AI</span>
+          <span class="chip">20 years software engineering</span>
+          <span class="chip">Startup founder</span>
+          <span class="chip">Qualified psychotherapist</span>
+        </div>
+      </div>
+
+      <div class="about-photo reveal">
+        <img
+          src="/images/alastair-headshot.jpg"
+          alt="Alastair Brayne, founder of ExFu"
+          width="480"
+          height="480"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-grid-item">
+        <h3 class="about-grid-label">Tech</h3>
+        <p>I know what AI can actually do today, not what a keynote speaker says it might do next&nbsp;year.</p>
+      </div>
+      <div class="about-grid-item">
+        <h3 class="about-grid-label">Startup</h3>
+        <p>I understand the pressure of multiple hats and urgent priorities. I've lived&nbsp;it.</p>
+      </div>
+      <div class="about-grid-item">
+        <h3 class="about-grid-label">Psychotherapy</h3>
+        <p>I know how to work with people towards their best selves, whatever's getting in the&nbsp;way.</p>
+      </div>
+    </div>
+
+    <p class="about-closing reveal">One afternoon, and your day-to-day is covered. I'm here if and when you want help making it even smarter or more&nbsp;complex.</p>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-surface-dark);
+    color: var(--color-text-dark);
+    padding-block: var(--section-padding);
+  }
+
+  .about-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .about-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .about-content h2 {
+    font-size: var(--text-display);
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-name {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Credential chips */
+  .about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xl);
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-muted-dark);
+    border-radius: 4px;
+    opacity: 0.85;
+  }
+
+  /* Three-column experience grid */
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .about-grid-label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+  }
+
+  .about-grid-item p {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    opacity: 0.9;
+    max-width: none;
+  }
+
+  /* Closing statement */
+  .about-closing {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-accent);
+    max-width: none;
+  }
+
+  .about-photo img {
+    width: 100%;
+    max-width: 20rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    filter: grayscale(0.15);
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      flex-direction: row;
+      gap: var(--space-xl);
+    }
+
+    .about-grid-item {
+      flex: 1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .about-top {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--space-3xl);
+    }
+
+    .about-content {
+      flex: 1.2;
+    }
+
+    .about-photo {
+      flex: 0.8;
+    }
+
+    .about-photo img {
+      max-width: none;
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400&family=Work+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #1C1A17;
+    color: #EDE9E4;
+    font-family: 'Work Sans', sans-serif;
+    padding: 80px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 48px;
+  }
+  .logo .ex { color: #EDE9E4; }
+  .logo .fu { color: #BA432F; font-style: italic; }
+
+  .headline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #EDE9E4;
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+
+  /* Dictionary definition block */
+  .definition-block {
+    border-left: 2px solid #BA432F;
+    padding: 20px 28px;
+    max-width: 600px;
+  }
+
+  .definition-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .definition-term {
+    font-weight: 600;
+    font-size: 20px;
+    color: #EDE9E4;
+  }
+
+  .definition-pronunciation {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(237, 233, 228, 0.5);
+  }
+
+  .definition-pos {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(237, 233, 228, 0.5);
+  }
+
+  .definition-text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(237, 233, 228, 0.7);
+  }
+
+  .accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: #BA432F;
+  }
+
+  .url {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #6B665F;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+  <div class="logo"><span class="ex">Ex</span><span class="fu">Fu</span></div>
+  <div class="headline">Your AI assistant, set up in one afternoon.</div>
+  <div class="definition-block">
+    <div class="definition-header">
+      <span class="definition-term">ExFu</span>
+      <span class="definition-pronunciation">/ˈeks.fuː/</span>
+      <span class="definition-pos">noun</span>
+    </div>
+    <div class="definition-text">Execution fu. Like kung fu, but for getting things done. The craft of turning intent into action, with AI fighting in your corner.</div>
+  </div>
+  <div class="url">exfu.ai</div>
+  <div class="accent-bar"></div>
+</body>
+</html>

@@ -1,0 +1,461 @@
+---
+const stickies = [
+  { text: '12 active projects', color: 'yellow', rotate: -7, x: 8, y: 15, mx: 6, my: 14 },
+  { text: 'Many hats. Many responsibilities.', color: 'green', rotate: 3, x: 30, y: 11, mx: 54, my: 13 },
+  { text: 'I need to be on top of everything', color: 'pink', rotate: -1, x: 50, y: 15, mx: 6, my: 23 },
+  { text: 'Inbox: 999+ unread', color: 'yellow', rotate: -5, x: 72, y: 15, mx: 55, my: 25 },
+  { text: 'Holding it all in my head', color: 'blue', rotate: -2, x: 15, y: 31, mx: 6, my: 35 },
+  { text: 'TODO: make a to-do list', color: 'pink', rotate: -4, x: 74, y: 32, mx: 55, my: 34 },
+  { text: 'Everything depends on me', color: 'yellow', rotate: 3, x: 16, y: 52, mx: 7, my: 49 },
+  { text: '3am idea #412', color: 'green', rotate: -2, x: 10, y: 71, mx: 55, my: 46 },
+  { text: 'Too many SaaS tools', color: 'blue', rotate: -3, x: 39, y: 62, mx: 7, my: 62 },
+  { text: 'TODO: Find out how AI can actually help me !!!', color: 'accent', rotate: -1, x: 61, y: 56, mx: 53, my: 56 },
+  { text: 'I keep copy-pasting between apps', color: 'green', rotate: 6, x: 82, y: 58, mx: 54, my: 71 },
+  { text: "Don't need another app. Just need ___", color: 'yellow', rotate: -4, x: 28, y: 79, mx: 6, my: 71 },
+  { text: 'Signed up for another tool. Used it twice.', color: 'blue', rotate: -3, x: 50, y: 80, mx: 55, my: 83 },
+  { text: "Why don't my tools just talk to each other", color: 'pink', rotate: -4, x: 72, y: 79, mx: 5, my: 85 },
+];
+---
+
+<section id="hero" class="hero">
+  <div class="hero-inner section-container">
+    <div class="board" role="list" aria-label="Common situations ExFu helps with">
+      <h2 class="board-title">Who is ExFu for?</h2>
+      {stickies.map((s, i) =>
+        s.color === 'accent' ? (
+          <a
+            href="#contact"
+            class:list={['sticky', 'sticky--accent', 'sticky--cta']}
+            role="listitem"
+            style={`--rotate: ${s.rotate}deg; --x: ${s.x}%; --y: ${s.y}%; --mx: ${s.mx}%; --my: ${s.my}%; --i: ${i}`}
+          >
+            <p class="sticky-text">{s.text}</p>
+          </a>
+        ) : (
+          <div
+            class:list={['sticky', `sticky--${s.color}`]}
+            role="listitem"
+            style={`--rotate: ${s.rotate}deg; --x: ${s.x}%; --y: ${s.y}%; --mx: ${s.mx}%; --my: ${s.my}%; --i: ${i}`}
+            data-draggable
+          >
+            <p class="sticky-text">{s.text}</p>
+          </div>
+        )
+      )}
+
+    </div>
+
+    <!-- Debug panel: only visible with ?debug in URL -->
+    <div id="sticky-debug" class="sticky-debug" hidden>
+      <p class="sticky-debug-title">Sticky positions (drag to move, scroll to rotate, right-click to cycle colour):</p>
+      <pre id="sticky-debug-output"></pre>
+    </div>
+
+    <div class="hero-pivot">
+      <p class="hero-pivot-text">Sound familiar?</p>
+      <div class="hero-ctas">
+        <a href="mailto:letsgo@exfu.ai?subject=ExFu%20Session" class="btn-primary">Book a Session</a>
+        <a href="#how-it-works" class="btn-secondary">How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  #hero {
+    background: var(--color-surface-dark);
+    color: var(--color-text-dark);
+    padding-top: calc(var(--space-4xl) + var(--space-xl));
+    padding-bottom: var(--section-padding);
+    overflow: hidden;
+  }
+
+  #hero .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  #hero .board-title {
+    position: absolute;
+    top: 46%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    font-family: var(--font-body);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--color-text-dark);
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: hero-fade-in 0.4s var(--ease-out) forwards;
+    animation-delay: 100ms;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* --- The sticky note board --- */
+  #hero .board {
+    position: relative;
+    width: 100%;
+    min-height: 28rem;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(186, 67, 47, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 60%, rgba(186, 67, 47, 0.03) 0%, transparent 50%);
+    border-radius: 8px;
+    border: 1px solid rgba(138, 132, 124, 0.1);
+    overflow: hidden;
+  }
+
+  /* --- Individual sticky notes --- */
+  /* Each sticky is a wrapper div. The visible paper is drawn by the
+     wrapper's background + clip-path (which cuts the top-right corner).
+     ::before = the folded-over paper triangle.
+     ::after  = a subtle shadow beneath the fold. */
+
+  #hero .sticky {
+    --fold: 0.9rem;
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: clamp(8rem, 14vw, 11rem);
+    padding: 0.875rem 1rem;
+    transform: rotate(var(--rotate));
+    cursor: grab;
+    user-select: none;
+    filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.18));
+    transition: transform 0.2s var(--ease-out), filter 0.2s var(--ease-out);
+    opacity: 0;
+    animation: hero-sticky-enter 0.4s var(--ease-out) forwards;
+    animation-delay: calc(var(--i) * 60ms + 300ms);
+    /* Cut the top-right corner off */
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - var(--fold)) 0%,
+      100% var(--fold),
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  #hero .sticky:hover {
+    transform: rotate(var(--rotate)) scale(1.08);
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
+    z-index: 10;
+  }
+
+  #hero .sticky:active {
+    cursor: grabbing;
+  }
+
+  /* CTA sticky — clickable, not draggable */
+  #hero .sticky--cta {
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 5;
+  }
+
+  #hero .sticky--cta:hover {
+    transform: rotate(var(--rotate)) scale(1.12);
+    filter: drop-shadow(3px 6px 12px rgba(186, 67, 47, 0.4));
+  }
+
+  #hero .sticky.dragging {
+    z-index: 100;
+    transform: rotate(0deg) scale(1.1);
+    filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.35));
+    transition: filter 0.15s var(--ease-out);
+  }
+
+  /* --- Corner fold via clip-path + pseudo-elements --- */
+
+  /* The folded-over paper triangle */
+  #hero .sticky::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--fold);
+    height: var(--fold);
+    background: linear-gradient(
+      225deg,
+      var(--fold-color) 50%,
+      rgba(0, 0, 0, 0.08) 50%,
+      rgba(0, 0, 0, 0.12)
+    );
+    /* The fold triangle itself is clipped to just the triangle shape */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+  }
+
+  /* Fold colours — slightly darker shade of each sticky */
+  #hero .sticky--yellow { --fold-color: #e6d05a; }
+  #hero .sticky--pink { --fold-color: #e89a9a; }
+  #hero .sticky--blue { --fold-color: #88b8d0; }
+  #hero .sticky--green { --fold-color: #94c8a4; }
+  #hero .sticky--accent { --fold-color: #8a2e20; }
+
+  #hero .sticky-text {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 1vw, 0.8125rem);
+    font-weight: 500;
+    line-height: 1.35;
+    max-width: none;
+  }
+
+  /* --- Sticky colours --- */
+  #hero .sticky--yellow { background: #FCE87C; color: #3D3400; }
+  #hero .sticky--pink { background: #F8B4B4; color: #4A1010; }
+  #hero .sticky--blue { background: #A7D8F0; color: #0A2E42; }
+  #hero .sticky--green { background: #B8E6C8; color: #0F3D1F; }
+  #hero .sticky--accent { background: var(--color-accent); color: white; }
+
+
+  /* --- Pivot text below board --- */
+  #hero .hero-pivot {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    opacity: 0;
+    animation: hero-fade-in 0.5s var(--ease-out) forwards;
+    animation-delay: 1300ms;
+  }
+
+  #hero .hero-pivot-text {
+    font-family: var(--font-body);
+    font-size: var(--text-h3);
+    font-weight: 500;
+    color: var(--color-text-dark);
+    max-width: none;
+  }
+
+  #hero .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  #hero .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color var(--duration-fast) var(--ease-out);
+  }
+
+  #hero .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  #hero .btn-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: transparent;
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 400;
+    border: 1.5px solid rgba(237, 233, 228, 0.25);
+    border-radius: 4px;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out);
+  }
+
+  #hero .btn-secondary:hover {
+    border-color: rgba(237, 233, 228, 0.5);
+    color: white;
+  }
+
+  /* --- Animations --- */
+  @keyframes hero-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes hero-sticky-enter {
+    from {
+      opacity: 0;
+      transform: rotate(var(--rotate)) scale(0.7) translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(var(--rotate)) scale(1) translateY(0);
+    }
+  }
+
+  /* --- Debug panel --- */
+  #hero .sticky-debug {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: var(--space-md);
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #ccc;
+    max-height: 24rem;
+    overflow-y: auto;
+  }
+
+  #hero .sticky-debug-title {
+    color: var(--color-muted);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    max-width: none;
+  }
+
+  #hero #sticky-debug-output {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 639px) {
+    #hero {
+      padding-top: calc(var(--space-2xl) + var(--space-md));
+    }
+
+    #hero .board {
+      min-height: 36rem;
+    }
+
+    #hero .sticky {
+      left: var(--mx);
+      top: var(--my);
+      width: clamp(6.5rem, 38vw, 10rem);
+      padding: 0.625rem 0.75rem;
+    }
+
+    #hero .board-title {
+      top: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #hero .board-title,
+    #hero .sticky,
+    #hero .hero-pivot {
+      opacity: 1;
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const isDebug = new URLSearchParams(window.location.search).has('debug');
+  const board = document.querySelector('#hero .board') as HTMLElement;
+  const isMobile = window.innerWidth < 640;
+
+  // --- Debug mode: drag, rotate, colour cycle, coord readout ---
+  if (isDebug && board) {
+    const debugPanel = document.getElementById('sticky-debug');
+    const debugOutput = document.getElementById('sticky-debug-output');
+    if (debugPanel) debugPanel.hidden = false;
+
+    // Which coord key to output depends on viewport
+    const xKey = isMobile ? 'mx' : 'x';
+    const yKey = isMobile ? 'my' : 'y';
+
+    function updateDebug() {
+      if (!debugOutput || !board) return;
+      const boardW = board.offsetWidth;
+      const boardH = board.offsetHeight;
+      const lines: string[] = [];
+
+      board.querySelectorAll('.sticky').forEach((el) => {
+        const s = el as HTMLElement;
+        const text = s.querySelector('.sticky-text')?.textContent?.trim() || '';
+        const shortText = text.length > 40 ? text.slice(0, 37) + '...' : text;
+        const xPct = Math.round((s.offsetLeft / boardW) * 100);
+        const yPct = Math.round((s.offsetTop / boardH) * 100);
+        const rot = Math.round(parseFloat(s.dataset.rotation || s.style.getPropertyValue('--rotate') || '0'));
+        const colorClass = [...s.classList].find(c => c.startsWith('sticky--') && c !== 'sticky--cta');
+        const color = colorClass ? colorClass.replace('sticky--', '') : '?';
+
+        lines.push(`{ text: '${shortText}', color: '${color}', rotate: ${rot}, ${xKey}: ${xPct}, ${yKey}: ${yPct} },`);
+      });
+
+      debugOutput.textContent = lines.join('\n');
+      console.clear();
+      console.log(`// ${isMobile ? 'MOBILE' : 'DESKTOP'} positions\n` + lines.join('\n'));
+    }
+
+    board.querySelectorAll('.sticky').forEach((el) => {
+      const sticky = el as HTMLElement;
+      let isDragging = false;
+      let startX = 0, startY = 0, origLeft = 0, origTop = 0;
+
+      const initialRotate = parseFloat(sticky.style.getPropertyValue('--rotate') || '0');
+      sticky.dataset.rotation = String(initialRotate);
+
+      sticky.addEventListener('pointerdown', (e: PointerEvent) => {
+        isDragging = true;
+        sticky.classList.add('dragging');
+        sticky.setPointerCapture(e.pointerId);
+        startX = e.clientX;
+        startY = e.clientY;
+        origLeft = sticky.offsetLeft;
+        origTop = sticky.offsetTop;
+        e.preventDefault();
+      });
+
+      sticky.addEventListener('pointermove', (e: PointerEvent) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        const boardRect = board.getBoundingClientRect();
+        const newLeft = Math.max(0, Math.min(boardRect.width - sticky.offsetWidth, origLeft + dx));
+        const newTop = Math.max(0, Math.min(boardRect.height - sticky.offsetHeight, origTop + dy));
+        sticky.style.left = `${newLeft}px`;
+        sticky.style.top = `${newTop}px`;
+        updateDebug();
+      });
+
+      const stopDrag = () => { isDragging = false; sticky.classList.remove('dragging'); updateDebug(); };
+      sticky.addEventListener('pointerup', stopDrag);
+      sticky.addEventListener('pointercancel', stopDrag);
+
+      // Scroll to rotate
+      sticky.addEventListener('wheel', (e: WheelEvent) => {
+        e.preventDefault();
+        const cur = parseFloat(sticky.dataset.rotation || '0');
+        const next = cur + (e.deltaY > 0 ? 1 : -1);
+        sticky.dataset.rotation = String(next);
+        sticky.style.setProperty('--rotate', `${next}deg`);
+        sticky.style.transform = `rotate(${next}deg)`;
+        updateDebug();
+      }, { passive: false });
+
+      // Right-click to cycle colour
+      const colors = ['yellow', 'pink', 'blue', 'green', 'accent'];
+      sticky.addEventListener('contextmenu', (e: MouseEvent) => {
+        e.preventDefault();
+        const cur = colors.find(c => sticky.classList.contains(`sticky--${c}`)) || 'yellow';
+        const next = colors[(colors.indexOf(cur) + 1) % colors.length];
+        sticky.classList.remove(`sticky--${cur}`);
+        sticky.classList.add(`sticky--${next}`);
+        const bgMap: Record<string, [string, string]> = {
+          yellow: ['#FCE87C', '#3D3400'], pink: ['#F8B4B4', '#4A1010'],
+          blue: ['#A7D8F0', '#0A2E42'], green: ['#B8E6C8', '#0F3D1F'],
+          accent: ['var(--color-accent)', 'white'],
+        };
+        const [bg, fg] = bgMap[next];
+        sticky.style.background = bg;
+        sticky.style.color = fg;
+        updateDebug();
+      });
+    });
+
+    setTimeout(updateDebug, 2000);
+  }
+
+  // --- Production: nav scroll observer only ---
+  // (no drag, no wheel capture, no debug panel)
+</script>

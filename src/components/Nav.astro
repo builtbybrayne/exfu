@@ -1,0 +1,178 @@
+---
+const navLinks = [
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'About', href: '#about' },
+];
+---
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner section-container">
+    <a href="/" class="nav-logo" aria-label="ExFu home">
+      <img src="/images/exfu-logo-dark.png" alt="ExFu" width="80" height="32" />
+    </a>
+
+    <!-- Mobile toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </label>
+
+    <div class="nav-links">
+      {navLinks.map((link) => (
+        <a href={link.href} class="nav-link">{link.label}</a>
+      ))}
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding-block: var(--space-sm);
+    transition: background-color var(--duration-fast) var(--ease-out),
+                backdrop-filter var(--duration-fast) var(--ease-out);
+  }
+
+  .nav.scrolled {
+    background-color: rgba(28, 26, 23, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo img {
+    height: 28px;
+    width: auto;
+  }
+
+  /* Mobile toggle — CSS only */
+  .nav-toggle-input {
+    display: none;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: var(--space-xs);
+    z-index: 101;
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text-dark);
+    border-radius: 1px;
+    transition: transform var(--duration-fast) var(--ease-out),
+                opacity var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-toggle-input:checked ~ .nav-toggle-label .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle-input:checked ~ .nav-toggle-label .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked ~ .nav-toggle-label .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-surface-dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+
+  .nav-toggle-input:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 400;
+    color: var(--color-text-dark);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-cta {
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-cta:hover {
+    background: var(--color-accent-hover);
+  }
+
+  /* Desktop */
+  @media (min-width: 768px) {
+    .nav-toggle-label {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      position: static;
+      background: none;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+  }
+</style>
+
+<script>
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        nav.classList.toggle('scrolled', !entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: '-60px 0px 0px 0px' }
+    );
+
+    const hero = document.querySelector('#hero');
+    if (hero) observer.observe(hero);
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-link, .nav-cta').forEach((link) => {
+    link.addEventListener('click', () => {
+      const toggle = document.getElementById('nav-toggle') as HTMLInputElement;
+      if (toggle) toggle.checked = false;
+    });
+  });
+</script>

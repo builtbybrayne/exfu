@@ -1,0 +1,114 @@
+---
+const currentYear = new Date().getFullYear();
+const navLinks = [
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'About', href: '#about' },
+  { label: 'Get in Touch', href: '#contact' },
+];
+---
+
+<footer class="footer">
+  <div class="footer-inner section-container">
+    <div class="footer-top">
+      <a href="/" class="footer-logo" aria-label="ExFu home">
+        <img src="/images/exfu-logo-dark.png" alt="ExFu" width="72" height="28" />
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        {navLinks.map((link) => (
+          <a href={link.href} class="footer-link">{link.label}</a>
+        ))}
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <a href="mailto:letsgo@exfu.ai" class="footer-link">letsgo@exfu.ai</a>
+        <a
+          href="https://www.linkedin.com/in/albrayne/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >
+          LinkedIn
+        </a>
+      </div>
+      <p class="footer-copyright">&copy; {currentYear} ExFu. A service by WhaleyBear Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-primary);
+    color: var(--color-muted);
+    padding-block: var(--space-2xl) var(--space-xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .footer-logo img {
+    height: 24px;
+    width: auto;
+    opacity: 0.7;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .footer-link {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .footer-link:hover {
+    color: var(--color-text-dark);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .footer-contact {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .footer-copyright {
+    font-size: var(--text-label);
+    color: var(--color-muted-dark);
+    max-width: none;
+  }
+
+  @media (min-width: 768px) {
+    .footer-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+</style>
