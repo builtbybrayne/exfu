@@ -45,7 +45,17 @@
       "Bash(sips -z 192 192 --out icon-192.png exfu_favicon.png)",
       "Bash(sips -z 512 512 --out icon-512.png exfu_favicon.png)",
       "Read(//Users/al/.claude/skills/**)",
-      "Read(//Users/al/.claude/**)"
+      "Read(//Users/al/.claude/**)",
+      "Bash(dig exfu.ai NS +short)",
+      "Bash(dig exfu.ai A +short)",
+      "Bash(curl -sI --max-time 10 https://exfu.ai)",
+      "Bash(curl -sI --max-time 10 http://exfu.ai)",
+      "Bash(dig exfu.ai A +trace)",
+      "Bash(curl -sI --max-time 10 --resolve exfu.ai:80:63.176.8.218 http://exfu.ai)",
+      "Bash(curl -sI --max-time 10 --resolve exfu.ai:443:63.176.8.218 https://exfu.ai)",
+      "Bash(dig exfu.ai A +short @8.8.8.8)",
+      "Bash(dig exfu.ai A +short @1.1.1.1)",
+      "Bash(scutil --dns)"
     ]
   }
 }

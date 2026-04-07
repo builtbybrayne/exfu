@@ -4,12 +4,28 @@
       <p class="contact-label">Ready?</p>
       <h2>Let's set it up.</h2>
       <p class="contact-body">
-        Book a session, or drop me a line if you want to talk it through first.
+        Book a session, or get in touch if you want to talk it through first.
       </p>
 
-      <div class="contact-actions">
-        <a href="mailto:letsgo@exfu.ai?subject=ExFu%20Session" class="btn-primary">Book a Session</a>
-      </div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+        <p class="hidden" aria-hidden="true">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
 
       <div class="contact-links">
         <a href="mailto:letsgo@exfu.ai" class="contact-link">
@@ -89,6 +105,53 @@
 
   .btn-primary:hover {
     background: var(--color-accent-hover);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-field label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-muted);
+    border-radius: 4px;
+    background: white;
+    color: var(--color-primary);
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .form-field textarea {
+    resize: vertical;
   }
 
   .contact-links {

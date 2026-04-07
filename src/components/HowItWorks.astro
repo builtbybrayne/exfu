@@ -7,19 +7,11 @@
     <div class="how-columns">
       <div class="how-col reveal">
         <h3 class="how-col-label">What happens</h3>
-        <p>
-          Video call. Shared screen. We build your AI assistant together.
-          I explain what we're doing and why, so you understand the setup,
-          not just use it.
-        </p>
+        <p>Video call. Shared screen. We build your AI assistant together. I explain what we're doing and why, so you understand the setup, not just use it.</p>
       </div>
       <div class="how-col reveal">
         <h3 class="how-col-label">What you leave with</h3>
-        <p>
-          An AI assistant that knows your context, your preferences, how you
-          work, and how to help you get stuff done. And you know how to keep
-          it sharp.
-        </p>
+        <p>An AI assistant that knows your context, your preferences, how you work, and how to help you get stuff done. And you know how to keep it sharp.</p>
       </div>
     </div>
 
@@ -33,8 +25,36 @@
       </p>
     </blockquote>
 
+    <div class="how-sessions">
+      <div class="how-session reveal">
+        <span class="how-session-number">01</span>
+        <h3 class="how-session-title">Setting up the kitchen</h3>
+        <p>We give your AI a permanent home, a personal workspace it maintains and you feed into. By the end, it has context. It&nbsp;remembers.</p>
+      </div>
+      <div class="how-session reveal">
+        <span class="how-session-number">02</span>
+        <h3 class="how-session-title">Cooking the first meal</h3>
+        <p>We pick a real workflow and build it end to end. You walk away with something working, and the understanding to build the next one&nbsp;yourself.</p>
+      </div>
+    </div>
+
+    <div class="how-examples reveal">
+      <h3 class="how-examples-label">Example setups from real sessions</h3>
+      <div class="how-examples-grid">
+        <div class="how-example">
+          <p>Your AI handles project management and task tracking, integrated with your calendar, with daily morning briefings.</p>
+        </div>
+        <div class="how-example">
+          <p>Your AI tracks who you've talked to and who you want to talk to. No expensive CRM software. Just you, your contacts, and why that person mattered to&nbsp;you.</p>
+        </div>
+        <div class="how-example">
+          <p>Your AI connects your spreadsheets to your existing apps and keeps everything in&nbsp;sync.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="how-cta reveal">
-      <a href="mailto:letsgo@exfu.ai?subject=ExFu%20Session" class="btn-primary">Book a Session</a>
+      <a href="#contact" class="btn-primary">Book a Session</a>
     </div>
   </div>
 </section>
@@ -77,6 +97,73 @@
     font-size: var(--text-body-lg);
     line-height: 1.7;
     color: var(--color-text-light);
+  }
+
+  /* Session breakdown */
+  .how-sessions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .how-session {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .how-session-number {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-accent);
+    opacity: 0.8;
+  }
+
+  .how-session-title {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    color: var(--color-primary);
+  }
+
+  .how-session p {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-text-light);
+    max-width: 32rem;
+  }
+
+  /* Examples */
+  .how-examples-label {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+  }
+
+  .how-examples-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .how-example {
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-surface-light);
+    border-left: 2px solid var(--color-muted);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .how-example p {
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: none;
   }
 
   /* Cooking analogy */
@@ -126,6 +213,28 @@
     }
 
     .how-col {
+      flex: 1;
+    }
+
+    .how-sessions {
+      flex-direction: row;
+      gap: var(--space-3xl);
+    }
+
+    .how-session {
+      flex: 1;
+    }
+
+    .how-session p {
+      max-width: none;
+    }
+
+    .how-examples-grid {
+      flex-direction: row;
+      gap: var(--space-lg);
+    }
+
+    .how-example {
       flex: 1;
     }
 

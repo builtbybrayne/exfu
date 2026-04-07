@@ -4,7 +4,9 @@ import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Definition from '../components/Definition.astro';
 import Recognition from '../components/Recognition.astro';
+import Testimonial from '../components/Testimonial.astro';
 import HowItWorks from '../components/HowItWorks.astro';
+import Approach from '../components/Approach.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -25,6 +27,13 @@ import Footer from '../components/Footer.astro';
 
     <Recognition />
 
+    <Testimonial
+      quote="Just to say Alastair that I'm having the most amazing experience with Claude, having connected it with OneDrive, Gmail, MailerLite, Wordpress and more... Stunning. Thank you. Game-changer stuff."
+      name="Mark"
+      role="Company Director"
+      variant="light"
+    />
+
     <Definition
       term="ExFu"
       pronunciation="/ˈeks.fuː/"
@@ -35,11 +44,27 @@ import Footer from '../components/Footer.astro';
 
     <HowItWorks />
 
+    <Testimonial
+      quote="Thank you very much again for the brilliant sessions. That was very helpful and insightful. Very much looking forward to working more closely with my new buddy Claude."
+      name="Julie"
+      role="Startup Founder"
+      variant="dark"
+    />
+
     <Definition
       term="ExFu"
       pronunciation="/ˈeks.fuː/"
       partOfSpeech="adj."
       definition="Executive, functioning. The version of you that's on top of it. Not because you grew more arms, but because you got smarter tools."
+      variant="light"
+    />
+
+    <Approach />
+
+    <Testimonial
+      quote="I found myself saying 'wow' and 'amazing' more than once throughout our sessions. It was genuine relief. Relief at being truly heard, and at seeing real solutions appear so quickly and effortlessly. He gave me back my time, which is everything to me right now."
+      name="Daphne"
+      role="Coach & Author"
       variant="light"
     />
 
