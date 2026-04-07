@@ -1,16 +1,19 @@
 <section id="recognition" class="recognition">
   <div class="recognition-inner section-container">
-    <div class="recognition-stack">
-      <p class="recognition-line reveal">You've got projects.</p>
-      <p class="recognition-line reveal">You've got ideas.</p>
-      <p class="recognition-line reveal">You've got workflows and systems, but no perfect tool.</p>
+    <div class="recognition-grid">
+      <div class="recognition-openers reveal">
+        <p class="recognition-line">You've got projects.</p>
+        <p class="recognition-line">You've got ideas.</p>
+        <p class="recognition-line">You've got workflows and systems, but no perfect tool.</p>
+      </div>
       <p class="recognition-context reveal">
         Maybe you're using ChatGPT. Maybe you've moved to Claude. But you
         haven't crossed from "helpful chats" to "something you'd hand real work&nbsp;to."
       </p>
       <p class="recognition-line recognition-standout reveal">You need a second brain that understands your workflow and actually does stuff for&nbsp;you.</p>
+      <p class="recognition-context reveal">ExFu isn't an app. I sit down with you and we build your AI assistant together using public AI like&nbsp;Claude.</p>
       <p class="recognition-kicker reveal">
-        One afternoon sets you up with your essential second brain, and the confidence to improve it&nbsp;yourself.
+        One afternoon with me, and you've got a second brain that actually works. Plus the understanding to keep sharpening it&nbsp;yourself.
       </p>
     </div>
   </div>
@@ -22,11 +25,16 @@
     padding-block: var(--section-padding);
   }
 
-  .recognition-stack {
-    max-width: var(--content-width);
+  .recognition-grid {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+  }
+
+  .recognition-openers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
   }
 
   .recognition-line {
@@ -40,14 +48,12 @@
   .recognition-standout {
     font-size: var(--text-h2);
     font-style: italic;
-    padding-top: var(--space-xs);
   }
 
   .recognition-context {
     font-size: var(--text-body-lg);
     line-height: 1.7;
     color: var(--color-text-light);
-    padding-top: var(--space-sm);
   }
 
   .recognition-kicker {
@@ -57,5 +63,19 @@
     line-height: 1.25;
     color: var(--color-accent);
     padding-top: var(--space-xs);
+    max-width: none;
+  }
+
+  @media (min-width: 768px) {
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+
+    .recognition-kicker {
+      grid-column: 1 / -1;
+    }
   }
 </style>
