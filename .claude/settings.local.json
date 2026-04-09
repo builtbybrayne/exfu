@@ -55,7 +55,10 @@
       "Bash(curl -sI --max-time 10 --resolve exfu.ai:443:63.176.8.218 https://exfu.ai)",
       "Bash(dig exfu.ai A +short @8.8.8.8)",
       "Bash(dig exfu.ai A +short @1.1.1.1)",
-      "Bash(scutil --dns)"
+      "Bash(scutil --dns)",
+      "Bash(head -5 /Users/al/.claude/plans/*.md)",
+      "Bash(npm ls:*)",
+      "Bash(node generate-favicons.mjs public/exfu_favicon.svg /tmp/favicon-test)"
     ]
   }
 }

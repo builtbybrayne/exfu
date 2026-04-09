@@ -1,0 +1,175 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775654372691,
+  "projectRoot": "/Users/al/Studio/projects/exfu_website",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": ">=22.12.0",
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "astro",
+        "version": "6.1.4",
+        "category": "fullstack"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": "Node.js 22.12.0"
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "astro dev",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 17,
+      "lastAccessed": 1775654372642,
+      "keyFiles": [
+        "_redirects",
+        "about.md",
+        "apple-touch-icon.png",
+        "exfu_favicon.png",
+        "exfu_favicon.svg"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 16,
+      "lastAccessed": 1775654372645,
+      "keyFiles": [
+        "_redirects",
+        "about.md",
+        "apple-touch-icon.png",
+        "exfu-embed.html",
+        "exfu_favicon.png"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1775654372646,
+      "keyFiles": []
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 11,
+      "lastAccessed": 1775654372648,
+      "keyFiles": [
+        "About.astro",
+        "Approach.astro",
+        "Contact.astro"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 2,
+      "lastAccessed": 1775654372649,
+      "keyFiles": [
+        "404.astro",
+        "index.astro"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 2,
+      "lastAccessed": 1775691788437,
+      "type": "file"
+    },
+    {
+      "path": "generate-favicons.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1775692161304,
+      "type": "file"
+    },
+    {
+      "path": "src/styles",
+      "accessCount": 1,
+      "lastAccessed": 1775654470700,
+      "type": "directory"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 1,
+      "lastAccessed": 1775654473658,
+      "type": "file"
+    },
+    {
+      "path": "exfu-palette.svg",
+      "accessCount": 1,
+      "lastAccessed": 1775654721576,
+      "type": "file"
+    },
+    {
+      "path": "public",
+      "accessCount": 1,
+      "lastAccessed": 1775691655344,
+      "type": "directory"
+    },
+    {
+      "path": "assets/favicon/code.txt",
+      "accessCount": 1,
+      "lastAccessed": 1775691672908,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 1,
+      "lastAccessed": 1775691674106,
+      "type": "directory"
+    },
+    {
+      "path": "public/site.webmanifest",
+      "accessCount": 1,
+      "lastAccessed": 1775691679854,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

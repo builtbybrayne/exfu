@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;600&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="520" fill="#F7F5F2"/>
+
+  <!-- Title -->
+  <text x="40" y="44" font-family="'Source Serif 4', Georgia, serif" font-size="24" font-weight="600" fill="#161513">ExFu Design System</text>
+  <text x="40" y="66" font-family="'Work Sans', sans-serif" font-size="13" font-weight="400" fill="#8A847C">The Grounded Editorial</text>
+
+  <!-- Colour Palette -->
+  <text x="40" y="110" font-family="'Work Sans', sans-serif" font-size="11" font-weight="500" letter-spacing="1.5" fill="#8A847C">COLOUR PALETTE</text>
+
+  <!-- Row 1: Primary colours -->
+  <!-- Primary -->
+  <rect x="40" y="126" width="120" height="80" rx="6" fill="#161513"/>
+  <text x="50" y="222" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Primary</text>
+  <text x="50" y="238" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#161513</text>
+
+  <!-- Accent -->
+  <rect x="180" y="126" width="120" height="80" rx="6" fill="#BA432F"/>
+  <text x="190" y="222" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Accent</text>
+  <text x="190" y="238" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#BA432F</text>
+
+  <!-- Accent Hover -->
+  <rect x="320" y="126" width="120" height="80" rx="6" fill="#a33a28"/>
+  <text x="330" y="222" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Accent Hover</text>
+  <text x="330" y="238" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#a33a28</text>
+
+  <!-- Surface Light -->
+  <rect x="460" y="126" width="120" height="80" rx="6" fill="#F7F5F2" stroke="#EDE9E4" stroke-width="1"/>
+  <text x="470" y="222" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Surface Light</text>
+  <text x="470" y="238" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#F7F5F2</text>
+
+  <!-- Surface Dark -->
+  <rect x="600" y="126" width="120" height="80" rx="6" fill="#1C1A17"/>
+  <text x="610" y="222" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Surface Dark</text>
+  <text x="610" y="238" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#1C1A17</text>
+
+  <!-- Row 2: Text colours -->
+  <!-- Text Light -->
+  <rect x="40" y="260" width="120" height="80" rx="6" fill="#2A2724"/>
+  <text x="50" y="356" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Text Light</text>
+  <text x="50" y="372" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#2A2724</text>
+
+  <!-- Text Dark -->
+  <rect x="180" y="260" width="120" height="80" rx="6" fill="#EDE9E4" stroke="#8A847C" stroke-width="0.5"/>
+  <text x="190" y="356" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Text Dark</text>
+  <text x="190" y="372" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#EDE9E4</text>
+
+  <!-- Muted -->
+  <rect x="320" y="260" width="120" height="80" rx="6" fill="#8A847C"/>
+  <text x="330" y="356" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Muted</text>
+  <text x="330" y="372" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#8A847C</text>
+
+  <!-- Muted Dark -->
+  <rect x="460" y="260" width="120" height="80" rx="6" fill="#6B665F"/>
+  <text x="470" y="356" font-family="'Work Sans', sans-serif" font-size="12" font-weight="500" fill="#2A2724">Muted Dark</text>
+  <text x="470" y="372" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">#6B665F</text>
+
+  <!-- Typography Section -->
+  <text x="40" y="416" font-family="'Work Sans', sans-serif" font-size="11" font-weight="500" letter-spacing="1.5" fill="#8A847C">TYPOGRAPHY</text>
+
+  <!-- Display font -->
+  <text x="40" y="452" font-family="'Source Serif 4', Georgia, serif" font-size="28" font-weight="400" fill="#161513">Source Serif 4</text>
+  <text x="340" y="452" font-family="'Work Sans', sans-serif" font-size="12" fill="#8A847C">Display / Headlines</text>
+  <text x="340" y="470" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">Variable weight 200-900, normal + italic</text>
+
+  <!-- Body font -->
+  <text x="40" y="500" font-family="'Work Sans', sans-serif" font-size="24" font-weight="400" fill="#161513">Work Sans</text>
+  <text x="340" y="500" font-family="'Work Sans', sans-serif" font-size="12" fill="#8A847C">Body / UI</text>
+  <text x="340" y="518" font-family="'Work Sans', sans-serif" font-size="11" fill="#8A847C">Variable weight 100-900</text>
+</svg>
