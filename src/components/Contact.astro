@@ -7,7 +7,11 @@
         Book a session, or get in touch if you want to talk it through first.
       </p>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+      <div class="success-message" id="form-success">
+        <p class="success-text">Got it. I'll be in touch, usually within a day or two.</p>
+      </div>
+
+      <form name="contact" method="POST" action="/?submitted#contact" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
         <p class="hidden" aria-hidden="true">
           <label>Don't fill this out: <input name="bot-field" /></label>
         </p>
@@ -26,6 +30,13 @@
         </div>
         <button type="submit" class="btn-primary">Send</button>
       </form>
+
+      <script>
+        if (window.location.search.includes('submitted')) {
+          document.getElementById('contact-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        }
+      </script>
 
       <div class="contact-links">
         <a href="mailto:letsgo@exfu.ai" class="contact-link">
@@ -105,6 +116,18 @@
 
   .btn-primary:hover {
     background: var(--color-accent-hover);
+  }
+
+  .success-message {
+    display: none;
+    padding: var(--space-lg);
+    background: var(--color-surface-dark);
+    border-radius: 4px;
+  }
+
+  .success-text {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-dark);
   }
 
   .hidden {

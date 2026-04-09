@@ -117,9 +117,15 @@
   },
   "hotPaths": [
     {
+      "path": "src/components/Contact.astro",
+      "accessCount": 6,
+      "lastAccessed": 1775696106434,
+      "type": "directory"
+    },
+    {
       "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 2,
-      "lastAccessed": 1775691788437,
+      "accessCount": 3,
+      "lastAccessed": 1775696049202,
       "type": "file"
     },
     {
@@ -127,6 +133,18 @@
       "accessCount": 2,
       "lastAccessed": 1775692161304,
       "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1775695001554,
+      "type": "directory"
+    },
+    {
+      "path": "public",
+      "accessCount": 2,
+      "lastAccessed": 1775695008389,
+      "type": "directory"
     },
     {
       "path": "src/styles",
@@ -147,27 +165,33 @@
       "type": "file"
     },
     {
-      "path": "public",
-      "accessCount": 1,
-      "lastAccessed": 1775691655344,
-      "type": "directory"
-    },
-    {
       "path": "assets/favicon/code.txt",
       "accessCount": 1,
       "lastAccessed": 1775691672908,
       "type": "file"
     },
     {
-      "path": "src",
-      "accessCount": 1,
-      "lastAccessed": 1775691674106,
-      "type": "directory"
-    },
-    {
       "path": "public/site.webmanifest",
       "accessCount": 1,
       "lastAccessed": 1775691679854,
+      "type": "file"
+    },
+    {
+      "path": "public/exfu_favicon.svg",
+      "accessCount": 1,
+      "lastAccessed": 1775695001599,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1775695007989,
+      "type": "directory"
+    },
+    {
+      "path": "src/pages/thank-you.astro",
+      "accessCount": 1,
+      "lastAccessed": 1775696073282,
       "type": "file"
     }
   ],

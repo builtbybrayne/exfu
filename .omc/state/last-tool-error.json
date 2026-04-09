@@ -1,7 +1,7 @@
 {
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npm ls sharp 2>/dev/null; npm ls png-to-ico 2>/dev/null\",\"description\":\"Check if sharp and png-to-ico are installed\"}",
-  "error": "Exit code 1\ntmp-astro-init-exfu@0.0.1 /Users/al/Studio/projects/exfu_website\n`-- astro@6.1.4\n  `-- sharp@0.34.5\n\ntmp-astro-init-exfu@0.0.1 /Users/al/Studio/projects/exfu_website\n`-- (empty)",
-  "timestamp": "2026-04-08T23:47:53.654Z",
+  "tool_name": "mcp__Claude_Preview__preview_start",
+  "tool_input_preview": "{\"name\":\"exfu\"}",
+  "error": "Failed to start server: Failed to start preview server: Node.js v20.11.1 is not supported by Astro!\nPlease upgrade Node.js to a supported version: \">=22.12.0\"\n\n\n\nOutput:\nNode.js v20.11.1 is not supported by Astro!\nPlease upgrade Node.js to a supported version: \">=22.12.0\"\n\nCheck the command in .claude/launch.json and try again.",
+  "timestamp": "2026-04-09T00:54:43.255Z",
   "retry_count": 1
 }
