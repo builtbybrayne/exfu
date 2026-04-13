@@ -1,0 +1,308 @@
+<section id="lope" class="lope">
+  <div class="lope-inner section-container">
+    <div class="lope-intro reveal">
+      <h2>Business Agents and Training</h2>
+      <p class="lope-subtitle">
+        If you're looking to get agents implemented in your company, or your teams trained into an AI way of working, check out our sister offering: <a href="https://lope.works" target="_blank" rel="noopener noreferrer">lope.works</a>
+      </p>
+    </div>
+
+    <a
+      href="https://lope.works"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="lope-block reveal"
+    >
+      <!-- Grid texture -->
+      <div class="lope-grid"></div>
+      <!-- Blue glow -->
+      <div class="lope-glow lope-glow--blue"></div>
+      <!-- Orange glow -->
+      <div class="lope-glow lope-glow--orange"></div>
+
+      <div class="lope-content">
+        <div class="lope-header">
+          <img src="/images/lope-logo-dark.svg" alt="LoPE" class="lope-logo" />
+          <div class="lope-tags">
+            <span class="lope-tag">AI Agents</span>
+            <span class="lope-tag">AI Training</span>
+          </div>
+        </div>
+
+        <div class="lope-body">
+          <h3 class="lope-headline">
+            <span class="lope-hl">AI agents</span> in production.<br />
+            <span class="lope-hl">Your team</span> confident with AI.
+          </h3>
+          <p class="lope-desc">
+            Implementation and training for businesses ready to use AI.
+          </p>
+        </div>
+
+        <div class="lope-footer">
+          <span class="lope-acronym">
+            The <span class="lope-accent">L</span>ove
+            <span class="lope-accent">o</span>f
+            <span class="lope-accent">P</span>rompt
+            <span class="lope-accent">E</span>ngineering
+          </span>
+          <span class="lope-cta">
+            Visit lope.works
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .lope {
+    background: var(--color-surface-light);
+    padding-block: var(--section-padding);
+  }
+
+  .lope-inner {
+    max-width: var(--max-width);
+  }
+
+  /* Section intro */
+  .lope-intro {
+    text-align: center;
+    max-width: 38rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-xxl, 4rem);
+  }
+
+  .lope-intro h2 {
+    font-size: var(--text-h2);
+    color: var(--color-primary);
+  }
+
+  .lope-subtitle {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-muted);
+    margin-top: var(--space-md);
+  }
+
+  .lope-subtitle a {
+    color: var(--color-accent);
+    font-weight: 500;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .lope-subtitle a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Block card */
+  .lope-block {
+    display: block;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 20% 40%, rgb(14, 23, 41) 0%, rgb(10, 15, 22) 100%);
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+
+  .lope-block:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: 640px) {
+    .lope-block {
+      padding: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lope-block {
+      padding: 3rem;
+    }
+  }
+
+  /* Grid texture */
+  .lope-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Glows */
+  .lope-glow {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+
+  .lope-glow--blue {
+    background: #3b82f6;
+    opacity: 0.12;
+    top: -60px;
+    right: 60px;
+  }
+
+  .lope-glow--orange {
+    background: rgb(238, 105, 33);
+    opacity: 0.12;
+    bottom: -80px;
+    right: 200px;
+  }
+
+  /* Content */
+  .lope-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .lope-content {
+      gap: 2.5rem;
+    }
+  }
+
+  /* Header */
+  .lope-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .lope-logo {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  @media (min-width: 640px) {
+    .lope-logo {
+      height: 2rem;
+    }
+  }
+
+  .lope-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .lope-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+  }
+
+  @media (min-width: 640px) {
+    .lope-tag {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Body */
+  .lope-headline {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: white;
+  }
+
+  @media (min-width: 640px) {
+    .lope-headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lope-headline {
+      font-size: 2.5rem;
+    }
+  }
+
+  .lope-hl {
+    color: #3b82f6;
+  }
+
+  .lope-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    max-width: 28rem;
+    margin-top: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .lope-desc {
+      font-size: 1rem;
+    }
+  }
+
+  /* Footer */
+  .lope-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 640px) {
+    .lope-footer {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .lope-acronym {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+
+  @media (min-width: 640px) {
+    .lope-acronym {
+      font-size: 0.75rem;
+    }
+  }
+
+  .lope-accent {
+    color: rgb(238, 105, 33);
+    font-weight: 700;
+  }
+
+  .lope-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    background: #3b82f6;
+  }
+
+  @media (min-width: 640px) {
+    .lope-cta {
+      padding: 0.625rem 1.25rem;
+    }
+  }
+</style>

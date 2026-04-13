@@ -1,7 +1,7 @@
 {
-  "tool_name": "mcp__Claude_Preview__preview_start",
-  "tool_input_preview": "{\"name\":\"exfu\"}",
-  "error": "Failed to start server: Failed to start preview server: Node.js v20.11.1 is not supported by Astro!\nPlease upgrade Node.js to a supported version: \">=22.12.0\"\n\n\n\nOutput:\nNode.js v20.11.1 is not supported by Astro!\nPlease upgrade Node.js to a supported version: \">=22.12.0\"\n\nCheck the command in .claude/launch.json and try again.",
-  "timestamp": "2026-04-09T00:54:43.255Z",
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"which fnm || which nvm || which volta || which mise 2>/dev/null; ls ~/.nvm/versions/node/ 2>/dev/null; fnm list 2>/dev/null\",\"description\":\"Check available Node version managers\"}",
+  "error": "Exit code 127\nfnm not found\nnvm () {\n\tif [ \"$#\" -lt 1 ]\n\tthen\n\t\tnvm --help\n\t\treturn\n\tfi\n\tlocal DEFAULT_IFS\n\tDEFAULT_IFS=\" $(nvm_echo t | command tr t \\\\t)\n\" \n\tif [ \"${-#*e}\" != \"$-\" ]\n\tthen\n\t\tset +e\n\t\tlocal EXIT_CODE\n\t\tIFS=\"${DEFAULT_IFS}\" nvm \"$@\"\n\t\tEXIT_CODE=\"$?\" \n\t\tset -e\n\t\treturn \"$EXIT_CODE\"\n\telif [ \"${-#*a}\" != \"$-\" ]\n\tthen\n\t\tset +a\n\t\tlocal EXIT_CODE\n\t\tIFS=\"${DEFAULT_IFS}\" nvm \"$@\"\n\t\tEXIT_CODE=\"$?\" \n\t\tset -a\n\t\treturn \"$EXIT_CODE\"\n\telif [ -n \"${BASH-}\" ] && [ \"${-#*E}\" != \"$-\" ]\n\tthen\n\t\tset...",
+  "timestamp": "2026-04-13T17:05:00.107Z",
   "retry_count": 1
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1775654372691,
+  "lastScanned": 1776097794553,
   "projectRoot": "/Users/al/Studio/projects/exfu_website",
   "techStack": {
     "languages": [
@@ -53,6 +53,7 @@
     "isMonorepo": false,
     "workspaces": [],
     "mainDirectories": [
+      "assets",
       "public",
       "src"
     ],
@@ -60,11 +61,18 @@
   },
   "customNotes": [],
   "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1776097794518,
+      "keyFiles": []
+    },
     "dist": {
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 17,
-      "lastAccessed": 1775654372642,
+      "lastAccessed": 1776097794519,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -76,28 +84,28 @@
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 16,
-      "lastAccessed": 1775654372645,
+      "fileCount": 32,
+      "lastAccessed": 1776097794519,
       "keyFiles": [
         "_redirects",
         "about.md",
-        "apple-touch-icon.png",
-        "exfu-embed.html",
-        "exfu_favicon.png"
+        "apple-touch-icon-114x114.png",
+        "apple-touch-icon-120x120.png",
+        "apple-touch-icon-144x144.png"
       ]
     },
     "src": {
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1775654372646,
+      "lastAccessed": 1776097794520,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 11,
-      "lastAccessed": 1775654372648,
+      "lastAccessed": 1776097794523,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -108,7 +116,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 2,
-      "lastAccessed": 1775654372649,
+      "lastAccessed": 1776097794524,
       "keyFiles": [
         "404.astro",
         "index.astro"
@@ -117,81 +125,57 @@
   },
   "hotPaths": [
     {
-      "path": "src/components/Contact.astro",
-      "accessCount": 6,
-      "lastAccessed": 1775696106434,
-      "type": "directory"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 3,
-      "lastAccessed": 1775696049202,
+      "path": "src/pages/index.astro",
+      "accessCount": 17,
+      "lastAccessed": 1776102099719,
       "type": "file"
     },
     {
-      "path": "generate-favicons.mjs",
+      "path": "src/components/Lope.astro",
+      "accessCount": 8,
+      "lastAccessed": 1776100875986,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Hero.astro",
+      "accessCount": 6,
+      "lastAccessed": 1776101887040,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Nav.astro",
+      "accessCount": 4,
+      "lastAccessed": 1776100694813,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Definition.astro",
       "accessCount": 2,
-      "lastAccessed": 1775692161304,
+      "lastAccessed": 1776098321495,
+      "type": "file"
+    },
+    {
+      "path": ".claude/dev.sh",
+      "accessCount": 2,
+      "lastAccessed": 1776100038922,
       "type": "file"
     },
     {
       "path": "src",
-      "accessCount": 2,
-      "lastAccessed": 1775695001554,
+      "accessCount": 1,
+      "lastAccessed": 1776097806346,
       "type": "directory"
     },
     {
-      "path": "public",
-      "accessCount": 2,
-      "lastAccessed": 1775695008389,
-      "type": "directory"
-    },
-    {
-      "path": "src/styles",
+      "path": ".claude/launch.json",
       "accessCount": 1,
-      "lastAccessed": 1775654470700,
-      "type": "directory"
-    },
-    {
-      "path": "src/styles/global.css",
-      "accessCount": 1,
-      "lastAccessed": 1775654473658,
+      "lastAccessed": 1776099910742,
       "type": "file"
     },
     {
-      "path": "exfu-palette.svg",
+      "path": "public/og-template.html",
       "accessCount": 1,
-      "lastAccessed": 1775654721576,
-      "type": "file"
-    },
-    {
-      "path": "assets/favicon/code.txt",
-      "accessCount": 1,
-      "lastAccessed": 1775691672908,
-      "type": "file"
-    },
-    {
-      "path": "public/site.webmanifest",
-      "accessCount": 1,
-      "lastAccessed": 1775691679854,
-      "type": "file"
-    },
-    {
-      "path": "public/exfu_favicon.svg",
-      "accessCount": 1,
-      "lastAccessed": 1775695001599,
-      "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1775695007989,
-      "type": "directory"
-    },
-    {
-      "path": "src/pages/thank-you.astro",
-      "accessCount": 1,
-      "lastAccessed": 1775696073282,
+      "lastAccessed": 1776101700732,
       "type": "file"
     }
   ],
