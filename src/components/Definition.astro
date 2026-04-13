@@ -24,7 +24,7 @@ const {
         {pronunciation && <span class="definition-pronunciation">{pronunciation}</span>}
         {partOfSpeech && <span class="definition-pos">{partOfSpeech}</span>}
       </div>
-      <p class="definition-text">{definition}</p>
+      <p class="definition-text" set:html={definition} />
     </div>
   </div>
 </aside>
