@@ -1,6 +1,6 @@
 ---
 name: reminders
-description: Manage the user's lightweight reminder system. Use when the user asks to be reminded of something ("remind me to X", "don't let me forget", "flag this for [date]"), when they ask what's on their reminder list, when they want to complete or snooze a reminder, or at session start (called by the wow skill) to surface anything due or overdue.
+description: Manage the user's lightweight reminder system. Use when the user asks to be reminded of something ("remind me to X", "don't let me forget", "flag this for [date]"), when they ask what's on their reminder list, when they want to complete or snooze a reminder, or at session start (called by the substrate skill) to surface anything due or overdue.
 ---
 
 # Reminders
@@ -39,7 +39,7 @@ Triggers: "remind me to X on Y", "don't let me forget Z", "flag this for [date]"
 2. Prepend a new line to `databases/reminders/reminders.md`.
 3. Confirm: "Reminder saved for [date]: [what]."
 
-### Check (called on session load by `wow`)
+### Check (called on session load by `substrate`)
 
 1. Read the file.
 2. Find anything unchecked where date ≤ today.
@@ -81,5 +81,5 @@ Quarterly, offer to remove completed entries older than 90 days. Move them via t
 
 ## Dependencies
 
-- `wow` skill delegates to this skill on session load
+- `substrate` skill delegates to this skill on session load
 - If `daily-briefing` is installed, it also delegates reminder surfacing to this skill

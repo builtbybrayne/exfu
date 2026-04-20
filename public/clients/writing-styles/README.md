@@ -18,7 +18,7 @@ All files are available at `https://exfu.ai/clients/writing-styles/[filename]`.
 ## Prerequisites
 
 - Substrate core set up (the skill writes the profile to `context/me/writing-style.md`)
-- `wow` skill installed (so the substrate structure is discoverable)
+- `substrate` skill installed (so the substrate structure is discoverable)
 
 ## Installation
 

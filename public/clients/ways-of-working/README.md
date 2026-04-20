@@ -1,6 +1,6 @@
 # Ways of Working
 
-version: 2
+version: 3
 source: https://exfu.ai/clients/ways-of-working/
 
 This folder contains the reference documentation for how this substrate works. Every Claude instance should read this when it needs to understand the conventions, structure, or philosophy behind the user's way of working.
@@ -31,5 +31,6 @@ Don't rewrite history. New entries go at the top of the Changelog section (newes
 
 ## Changelog
 
+- 2026-04-20 v3: Bumped substrate-guide to v3: renamed `projects/` → `scopes/`, added scopes-vs-context section, added scopes-and-scope-skills section, added folders/Projects/scopes explainer. See its changelog for details.
 - 2026-04-20 v2: Added the changelog rule to this README. Bumped substrate-guide to v2 (see its changelog for details).
 - 2026-04-15 v1: Initial version.

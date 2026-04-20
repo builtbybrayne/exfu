@@ -1,55 +1,72 @@
 ---
 name: wow
-description: Way of Working — the core substrate skill. Bootstraps any Claude session with awareness of the user's substrate. Loads the ways-of-working guide, orients to the directory structure, and pulls in relevant context. Should be loaded at the start of every important conversation. Triggers on "wow", "way of working", "load my substrate", "check my setup", or at session start when referenced in Global Instructions.
+description: The user's personal way of working. This is the skill Claude loads first at session start to understand how THIS user works — their preferences, their substrate, their defaults. Triggers on "wow", "way of working", on fresh sessions, or when referenced in Global Instructions. Auto-loads the `substrate` skill (and other supporting skills) on activation so that everything the user depends on is ready from the start.
 ---
 
-# Way of Working (wow)
+# Way of Working (personal)
 
-This skill connects you to the user's substrate — their persistent system of files, skills, connectors, and scheduled tasks.
+This is your personal WoW skill — generated for you during setup and maintained by you as your way of working evolves. It's distinct from the generic `substrate` skill: `substrate` carries the architecture (shared across all ExFu clients); `wow` carries *your* specifics — your preferences, your default behaviours, your personal defaults.
 
-## What to do when this skill loads
+This template is the starting point. Iterate on it as you go. The skill is yours to own.
 
-### 1. Find the substrate
+---
 
-The user's substrate core lives in a Box knowledge base. Check whether the Box folder is mounted in this session (filesystem access) or whether you need to use the Box MCP connector.
+## What this skill does at session start
 
-If you're not sure where the knowledge base is, check the Global Instructions — the path should be noted there. If it's not, ask the user.
+### 1. Load the `substrate` skill
 
-### 2. Read the ways-of-working guide
+On activation, load the `substrate` skill. It does the heavy lifting — finds the Box knowledge base, reads the ways-of-working guide, orients to the current folder, checks reminders and inbox. Everything needed to be substrate-aware.
 
-Read `context/ways-of-working/substrate-guide.md` from the knowledge base. This is the reference for how everything is structured — directory layout, conventions, access modes, naming rules, and how to find things.
+### 2. Load any other skills the user always wants running
 
-If this file doesn't exist yet, the substrate may not have been fully set up. Tell the user and offer to help complete the setup (point them to https://exfu.ai/clients/start.md).
+By default this includes the user's preferred core skills. Add to this list as you develop new personal skills or as your needs change. Examples of what might go here:
 
-### 3. Read the current folder's README
+- `reminders` (time-triggered surfacing)
+- `inbox` (frictionless capture)
+- `writing-styles` (voice/tone for drafting)
+- any `scope-<name>` skills the user wants always-on for current priorities
 
-If you're working in a specific project or context folder, read its README.md. Pay attention to the **Dependencies** section — it tells you what other parts of the substrate are relevant and should be loaded.
+### 3. Apply the user's personal conventions
 
-Follow the dependency chain: if a project README points to team context, read that too.
+The personal conventions section below is where you record the defaults that shape how Claude should behave for *this* user — tone, decision-making style, formatting preferences, escalation patterns, whatever.
 
-### 4. Check reminders and inbox
+---
 
-If the `reminders` skill is installed, delegate to it: read the reminders file, surface anything due or overdue. If nothing is due, say nothing.
+## Personal conventions
 
-If the `inbox` skill is installed, delegate to it: check the count. If there are items, mention briefly ("Inbox has [n] items"). Don't force processing.
+*This section is customised during setup and iterated over time. The items below are placeholders — replace with the user's actual preferences as they're discovered.*
 
-These checks should be fast and quiet. Don't turn session start into a ceremony.
+### Communication style
 
-### 5. Orient and proceed
+- (e.g. "Skip preambles. Get to the point. Assume mutual goodwill.")
+- (e.g. "No tickbox choices — make the suggestion and ask for a response in ordinary conversation.")
+- (e.g. "No sycophantic openers. No 'that changes everything' framing.")
 
-You should now understand:
-- How the substrate is structured
-- What the user's conventions are
-- What context is relevant to the current conversation
-- What (if anything) needs their attention from reminders or inbox
+### Decision-making defaults
 
-Proceed with the user's request. If they haven't asked anything specific yet, briefly confirm what you've loaded and ask what they'd like to work on.
+- (e.g. "When several paths are reasonable, pick one and say why, rather than laying out options.")
+- (e.g. "If something would cost real time or money, surface the trade-off before acting.")
 
-## Ongoing behaviour
+### Formatting preferences
 
-While this skill is loaded:
+- (e.g. "Prose over bullets for explanations. Bullets OK for lists of things.")
+- (e.g. "Short code blocks inline. Long ones in artifacts.")
 
-- **Follow the substrate conventions** described in the ways-of-working guide (naming, README maintenance, nothing casual in root, etc.)
-- **Use the right access mode** — filesystem when mounted, Box connector when not (see the box-filesystem-management skill for details)
-- **Maintain discoverability** — if you create new folders or content, create/update READMEs with dependency links
-- **Don't assume context persists between sessions.** If you need information from the substrate, read it. Don't rely on memory or prior conversations.
+### Workflow defaults
+
+- (e.g. "After substantial writing, save a draft in `scratch/` before iterating.")
+- (e.g. "For new scopes, always create the scope folder + scope skill together.")
+
+### Tools and systems the user works with
+
+- (e.g. task manager, calendar, email client, writing tools) — these may be connected via MCP. Check what's available when relevant.
+
+---
+
+## Iterating this skill
+
+This skill is a living document. When the user corrects your behaviour, or confirms a non-obvious approach as right, consider whether the guidance belongs here. When something becomes a pattern, write it down.
+
+To update: edit this file, then repackage and reinstall the skill (see the `skill-packaging` skill for how).
+
+Keep the list of always-load skills (Section 2 above) honest. If a skill stops being routinely useful, remove it. If a new skill becomes central, add it. The point of this skill is to make every fresh Claude session immediately useful, not to load everything possible.

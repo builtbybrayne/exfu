@@ -13,7 +13,7 @@ Runs each morning and produces a briefing Cowork session covering:
 - **Inbox** — count of items to process
 - **Calendar** — today's events (if a calendar MCP is connected)
 - **Tasks** — priority items (if a task manager MCP is connected)
-- **Anything else flagged** — items pinned in `context/me/` or the current project
+- **Anything else flagged** — items pinned in `context/me/` or in any active scope
 
 ## One-time setup
 
@@ -35,12 +35,12 @@ Paste the following as the task prompt:
 
 Produce this morning's briefing.
 
-1. Load the `wow` skill to orient to the substrate.
+1. Load the `wow` skill (the user's personal WoW) so the briefing reflects their defaults. `wow` auto-loads `substrate`, which reads the ways-of-working guide and surfaces reminders/inbox.
 2. Use the `reminders` skill to surface anything due or overdue. Show them as a short list.
 3. Use the `inbox` skill to check the count. If >5 items, flag it's getting full.
 4. If a calendar MCP is connected (Google Calendar, Outlook, etc.), list today's events with times. If not, skip this section.
 5. If a task manager MCP is connected (Linear, Asana, ClickUp, Notion, Todoist, etc.), pull the user's top priority items due today or overdue. If not, skip.
-6. Check `context/me/` and the current project folder READMEs for anything pinned for today.
+6. Check `context/me/` and any active scope READMEs for anything pinned for today.
 
 Format as a short morning briefing. Skimmable. No preamble, no sign-off. Plain prose or short lists where useful.
 

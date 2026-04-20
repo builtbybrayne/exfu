@@ -2,7 +2,7 @@
 
 ## What This Skill Does
 
-Manages a lightweight reminders file in the user's substrate at `databases/reminders/reminders.md`. Creates, lists, completes, and snoozes reminders. Called by the `wow` skill on session load to surface anything due or overdue.
+Manages a lightweight reminders file in the user's substrate at `databases/reminders/reminders.md`. Creates, lists, completes, and snoozes reminders. Called by the `substrate` skill on session load to surface anything due or overdue.
 
 Distinct from a task manager. Reminders here are Claude's own nudges — low-overhead, no external system, no project management. For a user who wants to be pinged about things without turning every thought into a tracked task.
 
@@ -18,7 +18,7 @@ All files are available at `https://exfu.ai/clients/reminders/[filename]`.
 ## Prerequisites
 
 - Substrate core set up
-- `wow` skill installed (wow delegates reminder checks to this skill on load)
+- `substrate` skill installed (substrate delegates reminder checks to this skill on load)
 
 ## Installation
 

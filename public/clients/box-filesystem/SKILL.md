@@ -36,9 +36,9 @@ The connector has no delete tool. To delete a file, move it to the trash folder:
 
 Example:
 ```
-Original:  projects/website/old-draft.md
-Trash:     _trash/projects/website/old-draft.md
-Renamed:   projects/website/_DELETED_2026-04-20_old-draft.md
+Original:  scopes/website/old-draft.md
+Trash:     _trash/scopes/website/old-draft.md
+Renamed:   scopes/website/_DELETED_2026-04-20_old-draft.md
 ```
 
 The daily cleanup task (running on Claude Desktop) handles both: it moves the renamed original into trash (if the connector couldn't fully remove it) and permanently deletes anything in `_trash/` older than 60 days.

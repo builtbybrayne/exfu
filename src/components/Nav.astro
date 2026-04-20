@@ -1,8 +1,8 @@
 ---
 const navLinks = [
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'About', href: '#about' },
-  { label: 'For Business', href: '#lope' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'About', href: '/#about' },
+  { label: 'For Business', href: '/#lope' },
 ];
 ---
 
@@ -24,7 +24,7 @@ const navLinks = [
       {navLinks.map((link) => (
         <a href={link.href} class="nav-link">{link.label}</a>
       ))}
-      <a href="#contact" class="nav-cta">Get in Touch</a>
+      <a href="/#contact" class="nav-cta">Get in Touch</a>
     </div>
   </div>
 </nav>
@@ -166,7 +166,12 @@ const navLinks = [
     );
 
     const hero = document.querySelector('#hero');
-    if (hero) observer.observe(hero);
+    if (hero) {
+      observer.observe(hero);
+    } else {
+      // Pages without a dark hero — nav always gets the scrolled background
+      nav.classList.add('scrolled');
+    }
   }
 
   // Close mobile menu on link click

@@ -1,34 +1,36 @@
-# wow (Way of Working)
+# wow (personal way of working)
 
-## What This Skill Does
+## Purpose
 
-The core substrate skill. When loaded, it tells Claude to read the user's ways-of-working guide, orient to the directory structure, and pull in relevant context for the current conversation.
+The user's personal way-of-working skill. Auto-loads the `substrate` skill on activation, plus any other skills the user always wants running. Carries the user's personal conventions (communication, decisions, formatting, workflow).
 
-Think of it as the "boot sequence" for substrate-aware sessions. Without it, Claude might not know the substrate exists.
+This is distinct from the generic `substrate` skill: `substrate` is shared across all ExFu clients and encodes the architecture. `wow` is personal — generated during setup and iterated over time.
 
-## Files in This Folder
+## Contents
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | The skill itself — install into the client's Claude environment |
+| `SKILL.md` | The skill itself — installed into the client's Claude environment |
 | `README.md` | This file |
 
-All files are available at `https://exfu.ai/clients/wow/[filename]`.
+Canonical template at `https://exfu.ai/clients/wow/[filename]`. The installed version diverges from the template as the user iterates.
 
-## Prerequisites
+## Dependencies
 
-- The substrate core must be set up (Box knowledge base with the directory structure and ways-of-working guide in place)
-- The box-filesystem-management skill should already be installed
+- `substrate` skill — required; `wow` auto-loads it
+- Any other skills the user adds to the always-load list
 
 ## Installation
 
-Fetch `SKILL.md` from `https://exfu.ai/clients/wow/SKILL.md` and install it as a skill in the client's Claude environment.
+During initial setup, the Installing Claude fetches the template from `https://exfu.ai/clients/wow/SKILL.md`, customises it lightly with what's known about the user (communication preferences, known systems, etc.), packages it as a `.skill` file, and hands it to the user to install.
 
 After installation:
-1. Add `wow` to the Global Instructions as an always-load skill (see the Global Instructions step in start.md for the exact wording)
-2. Tell the user they can also type `/wow` at the start of any conversation to manually load it
-3. Show them where to check whether skills are loaded — the capabilities/skills indicator in the conversation
+1. Add `wow` to the Global Instructions as an always-load skill
+2. Show the user how to type `/wow` to manually load it if needed
+3. Make sure `substrate` is installed too (it's what `wow` delegates to)
 
 ## Why This Matters
 
-Explain to the user: Claude doesn't always load skills automatically, even when they're relevant. This skill is the one you want loaded most often — it's what connects Claude to everything you've set up. Adding it to Global Instructions means Claude will load it by default in Cowork sessions. For regular chats, typing `/wow` at the start tells Claude to load it manually. Either way, keep an eye on the skills indicator to confirm it's active.
+The user owns this skill. It's where their preferences live durably, in a form that every future Claude can load automatically. Every correction, every confirmed non-obvious approach, every "actually, always do it this way" — that's what this skill is for.
+
+The initial version is a minimal template. The user and their Claude grow it together.

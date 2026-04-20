@@ -1,6 +1,6 @@
 ---
 name: inbox
-description: Lightweight quick-capture for thoughts, links, and loose items the user wants to save without deciding where they belong yet. Use when the user says "save this", "add to inbox", "capture that", "don't lose this thought", when they ask what's in their inbox, when they want to process or sort it, or at session start (called by the wow skill) to flag pending items.
+description: Lightweight quick-capture for thoughts, links, and loose items the user wants to save without deciding where they belong yet. Use when the user says "save this", "add to inbox", "capture that", "don't lose this thought", when they ask what's in their inbox, when they want to process or sort it, or at session start (called by the substrate skill) to flag pending items.
 ---
 
 # Inbox
@@ -46,13 +46,13 @@ Triggers: "what's in my inbox", "process inbox", "sort my inbox", "clear the inb
 2. For each entry, help the user decide where it belongs:
    - **Reminder?** → hand to the reminders skill, remove from inbox.
    - **Task?** → add to their task manager (via MCP if connected; otherwise flag for them), remove from inbox.
-   - **Project thought?** → move to the relevant `projects/[name]/` folder, remove from inbox.
+   - **Scope-specific thought?** → move to the relevant `scopes/[name]/` folder, remove from inbox.
    - **Draft or working file?** → move to `scratch/`, remove from inbox.
    - **Noise?** → remove.
    - **Actionable right now?** → do it, then remove.
 3. Save remaining items (if any).
 
-### Count (called on session load by `wow`)
+### Count (called on session load by `substrate`)
 
 1. Read the file.
 2. Count non-empty lines.
@@ -70,5 +70,5 @@ Triggers: "what's in my inbox", "process inbox", "sort my inbox", "clear the inb
 
 ## Dependencies
 
-- `wow` skill delegates to this skill on session load
+- `substrate` skill delegates to this skill on session load
 - The processing step may hand items to the `reminders` skill or the user's task manager MCP

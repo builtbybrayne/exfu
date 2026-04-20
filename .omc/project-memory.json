@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1776097794553,
+  "lastScanned": 1776717162239,
   "projectRoot": "/Users/al/Studio/projects/exfu_website",
   "techStack": {
     "languages": [
@@ -65,14 +65,14 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1776097794518,
+      "lastAccessed": 1776717162164,
       "keyFiles": []
     },
     "dist": {
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 17,
-      "lastAccessed": 1776097794519,
+      "lastAccessed": 1776717162169,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -85,7 +85,7 @@
       "path": "public",
       "purpose": "Public files",
       "fileCount": 32,
-      "lastAccessed": 1776097794519,
+      "lastAccessed": 1776717162170,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -98,14 +98,14 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1776097794520,
+      "lastAccessed": 1776717162171,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
-      "fileCount": 11,
-      "lastAccessed": 1776097794523,
+      "fileCount": 12,
+      "lastAccessed": 1776717162173,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -115,74 +115,33 @@
     "src/pages": {
       "path": "src/pages",
       "purpose": "Page components",
-      "fileCount": 2,
-      "lastAccessed": 1776097794524,
+      "fileCount": 4,
+      "lastAccessed": 1776717162174,
       "keyFiles": [
         "404.astro",
+        "get-started.astro",
         "index.astro"
       ]
     }
   },
   "hotPaths": [
     {
-      "path": "src/pages/index.astro",
-      "accessCount": 17,
-      "lastAccessed": 1776102099719,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Lope.astro",
-      "accessCount": 8,
-      "lastAccessed": 1776100875986,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Hero.astro",
-      "accessCount": 6,
-      "lastAccessed": 1776101887040,
+      "path": "src/pages/get-started.astro",
+      "accessCount": 11,
+      "lastAccessed": 1776718282226,
       "type": "file"
     },
     {
       "path": "src/components/Nav.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776100694813,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Footer.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776103512089,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Definition.astro",
       "accessCount": 2,
-      "lastAccessed": 1776098321495,
+      "lastAccessed": 1776718211631,
       "type": "file"
     },
     {
-      "path": ".claude/dev.sh",
-      "accessCount": 2,
-      "lastAccessed": 1776100038922,
-      "type": "file"
-    },
-    {
-      "path": "src",
+      "path": "src/styles/global.css",
       "accessCount": 1,
-      "lastAccessed": 1776097806346,
+      "lastAccessed": 1776717242707,
       "type": "directory"
-    },
-    {
-      "path": ".claude/launch.json",
-      "accessCount": 1,
-      "lastAccessed": 1776099910742,
-      "type": "file"
-    },
-    {
-      "path": "public/og-template.html",
-      "accessCount": 1,
-      "lastAccessed": 1776101700732,
-      "type": "file"
     }
   ],
   "userDirectives": []

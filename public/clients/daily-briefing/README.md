@@ -18,7 +18,7 @@ All files are available at `https://exfu.ai/clients/daily-briefing/[filename]`.
 ## Prerequisites
 
 - Substrate core set up
-- `wow`, `reminders`, and `inbox` skills installed
+- `substrate`, `wow` (user's personal), `reminders`, and `inbox` skills installed
 - Ideally at least one of: calendar MCP, task manager MCP — the briefing works without them but is much richer with them
 
 ## Installation
