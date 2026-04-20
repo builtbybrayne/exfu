@@ -149,6 +149,12 @@
       "type": "file"
     },
     {
+      "path": "src/components/Footer.astro",
+      "accessCount": 3,
+      "lastAccessed": 1776103512089,
+      "type": "file"
+    },
+    {
       "path": "src/components/Definition.astro",
       "accessCount": 2,
       "lastAccessed": 1776098321495,

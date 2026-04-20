@@ -10,9 +10,12 @@ const navLinks = [
 <footer class="footer">
   <div class="footer-inner section-container">
     <div class="footer-top">
-      <a href="/" class="footer-logo" aria-label="ExFu home">
-        <img src="/images/exfu-logo-dark.png" alt="ExFu" width="72" height="28" />
-      </a>
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="ExFu home">
+          <img src="/images/exfu-logo-dark.png" alt="ExFu" width="72" height="28" />
+        </a>
+        <p class="footer-strapline">The art of making AI work for you.</p>
+      </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
         {navLinks.map((link) => (
@@ -57,10 +60,22 @@ const navLinks = [
     gap: var(--space-lg);
   }
 
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
   .footer-logo img {
     height: 24px;
     width: auto;
     opacity: 0.7;
+  }
+
+  .footer-strapline {
+    font-size: var(--text-small);
+    color: var(--color-muted-dark);
+    font-style: italic;
   }
 
   .footer-nav {
