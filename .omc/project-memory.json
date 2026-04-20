@@ -127,8 +127,14 @@
   "hotPaths": [
     {
       "path": "src/pages/get-started.astro",
-      "accessCount": 11,
-      "lastAccessed": 1776718282226,
+      "accessCount": 50,
+      "lastAccessed": 1776721037816,
+      "type": "file"
+    },
+    {
+      "path": "public/clients/start.md",
+      "accessCount": 7,
+      "lastAccessed": 1776720136090,
       "type": "file"
     },
     {
@@ -141,6 +147,12 @@
       "path": "src/styles/global.css",
       "accessCount": 1,
       "lastAccessed": 1776717242707,
+      "type": "directory"
+    },
+    {
+      "path": "public/clients",
+      "accessCount": 1,
+      "lastAccessed": 1776719642913,
       "type": "directory"
     }
   ],

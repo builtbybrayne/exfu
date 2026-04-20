@@ -1,6 +1,6 @@
 # Substrate Guide
 
-version: 3
+version: 4
 source: https://exfu.ai/clients/ways-of-working/substrate-guide.md
 
 This is the reference for how this user's Claude substrate works. Read this whenever you need to understand the structure, conventions, or philosophy behind the way things are organised.
@@ -21,6 +21,36 @@ No single component is the substrate. It's the interplay between them:
 Everything cross-references everything else. Skills reference files. Files reference other files and skills. Scheduled tasks maintain the filesystem. That interdependence is the substrate.
 
 Without it, every Claude conversation starts from zero. With it, Claude has memory, context, instructions, and continuity.
+
+---
+
+## Why a substrate, rather than Claude's built-in features
+
+A fair question comes up often enough to answer here: Claude has Projects, Claude has memory, Claude has Dispatch. Why all this extra scaffolding?
+
+The honest answer is that Anthropic is moving in this direction, and over time some of what the substrate does will become native. Treat the substrate as filling real *current* gaps — not as a permanent need for everything it does today.
+
+The main current gaps:
+
+**Desktop–mobile parity.** Claude Cowork on desktop and the Claude mobile app don't interoperate cleanly. Dispatch exists, but it's fiddly — more a hack for techies than something that "just works" for most people. For anyone whose day spans both surfaces, this is a deal-breaker on its own. The substrate's file-based approach bridges it: the same files are visible from either surface, via Box.
+
+**Memory the user can see and edit.** Claude Projects has a memory concept, but the memories it creates are hidden, not user-editable, and don't transfer between devices. With the substrate, the "memory" is a folder of plain-text files. The user can read it, correct it, extend it, and move it. If Claude gets something wrong, you can open the file in any text or markdown editor and fix it directly.
+
+**Obsidian and similar tools.** Obsidian is popular among edge adopters for a reason — its graph view adds a discoverability layer worth having. Native integration isn't clean yet (the same desktop–mobile gap shows up there). When it matures, the substrate can absorb Obsidian-style front-matter and graph navigation without migration, because it's already just markdown files.
+
+**Portability across AI providers.** Claude Projects is Claude's. The substrate's core — the files — is platform-agnostic. If the user ever wants to try Gemini, or run multiple assistants against the same knowledge base, only the skills need porting. The substance is preserved.
+
+Further points, if the user probes:
+
+**Team-shared substrates.** Box supports proper sharing and collaboration at folder level. Multiple humans can work against the same substrate with appropriate access scoping. Claude Projects is a single-user container tied to one surface.
+
+**Inspectability.** When Claude behaves oddly, the user (or Claude) can open the files and see exactly what context is being read. Nothing is opaque. This matters for debugging, and for trust.
+
+**Durability.** Markdown files survive tool changes, vendor changes, and company changes. If Box went away tomorrow, the substrate moves to another cloud drive in an afternoon.
+
+### How to handle this in conversation
+
+Don't volunteer this section unprompted. If the user asks "why not just use Claude Projects / memory / Dispatch?", or shows scepticism about the setup, acknowledge that there are real current reasons and offer to go into whichever one matters to them. Don't recite the whole list.
 
 ---
 
@@ -296,6 +326,7 @@ Team-specific customisations take precedence over the canonical ExFu version. Wh
 
 ## Changelog
 
+- 2026-04-20 v4: Added "Why a substrate, rather than Claude's built-in features" section — covers desktop–mobile parity, editable memory, Obsidian, provider portability, team sharing, inspectability, and durability. Available for Claude to draw on when users ask why the substrate exists alongside Claude's native features.
 - 2026-04-20 v3: Renamed `projects/` → `scopes/` to avoid confusion with Anthropic's Claude Projects feature. Added scopes-vs-context section. Added scopes-and-scope-skills section (one-to-one folder/skill pairing). Added "folders, Claude Projects, and scopes" explainer. Added scope skill to naming conventions.
 - 2026-04-20 v2: Added substrate hygiene section (what not to put in the substrate). Added changelog rule and applied it here. Tightened README convention to a three-section stub (Purpose / Contents / Dependencies). Mentioned reminders and inbox as example databases.
 - 2026-04-15 v1: Initial version.

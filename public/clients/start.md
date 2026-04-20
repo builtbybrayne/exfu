@@ -83,6 +83,8 @@ The combination of files, skills, connectors, and scheduled tasks that together 
 
 *Why it exists:* without a substrate, every Claude conversation starts from zero. No memory. No context. No continuity. The substrate is what turns Claude from a smart-but-amnesiac assistant into something that works *with* the user over time.
 
+*If the user asks "but doesn't Claude already have memory / Projects / Dispatch?":* yes — and Anthropic is moving in this direction. The substrate fills real current gaps: desktop–mobile parity, memory the user can see and edit, Obsidian-style integration, and portability across AI providers. The substrate guide has the full answer — see the "Why a substrate, rather than Claude's built-in features" section once it's installed. Offer to dig into whichever gap matters to them; don't monologue the full list.
+
 ### Comprehension check
 
 Before moving on, ask the user to say back — in their own words — what a skill is, and the difference between a skill and a connector. If they hesitate or get it wrong, re-explain and try again. This isn't busywork; if they don't have these concepts solid, the rest of the setup becomes vibes.
@@ -135,7 +137,7 @@ The substrate needs a home. We use Box because it's accessible from every Claude
 
 If, for any reason, the folder doesn't exist yet, ask the user to create it now and grant you access before continuing.
 
-**Heads-up for future sessions:** tell the user that from now on, they can use the **"Work in project"** dropdown just below the chat box to auto-mount this folder at the start of any new Cowork task. No need to grant permission each time.
+**Heads-up for future sessions:** tell the user that from now on, they can use the **"Work in Project"** or **"Work in Folder"** dropdown just below the chat box to auto-mount this folder at the start of any new Cowork task. No need to grant permission each time.
 
 ---
 
@@ -144,6 +146,14 @@ If, for any reason, the folder doesn't exist yet, ask the user to create it now 
 ### Why this structure
 
 The substrate has a shape. A consistent one, so every future Claude instance knows where to look for things. Before you create it, explain the reason: without a shape, the knowledge base becomes a junk drawer. With this shape, Claude can find things predictably.
+
+### Frame this to the user before creating anything
+
+Before you start creating folders, tell the user plainly:
+
+> I'm going to build out a structure inside this folder during setup. It's tuned by ExFu to align with how I work, so I can stay organised across sessions and devices and find things predictably. Don't be thrown if it doesn't look like how you'd lay things out yourself; that's by design. You won't need to plan or curate what goes in here. I adapt to how you work, so your own files and folders stay exactly how you like them.
+
+This matters because otherwise users instinctively try to impose their own organisation on the substrate — renaming folders, adding their own hierarchy, tidying things "their way." That fights the substrate rather than letting it quietly do its job. The framing above respects their ownership and autonomy while setting an expectation. Say it early, answer any questions, then move on. Don't belabour it.
 
 ### Create the folders
 

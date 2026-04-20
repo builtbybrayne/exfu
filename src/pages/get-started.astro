@@ -38,6 +38,22 @@ import Footer from '../components/Footer.astro';
             <aside class="gs-warning" role="note">
               <strong>One catch:</strong> don't use "Sign in with Google" when authenticating Box. It breaks the Box Drive login flow. Use an email and password instead. <button type="button" class="gs-warning-link" data-dialog-open="dialog-google-fix">Already used Google login?</button>
             </aside>
+            <button type="button" class="gs-inline-link gs-why-box-link" data-dialog-open="dialog-why-box">Why Box and not Dropbox / Google Drive / OneDrive?</button>
+
+            <dialog id="dialog-why-box" class="gs-dialog" aria-labelledby="dialog-why-box-title">
+              <div class="gs-dialog-inner">
+                <button type="button" class="gs-dialog-close" data-dialog-close aria-label="Close">&times;</button>
+                <h3 id="dialog-why-box-title" class="gs-dialog-title">Why Box and not Dropbox, Google Drive, or OneDrive?</h3>
+                <p class="gs-dialog-para">Short answer: Box is the only mainstream cloud file system with a properly working MCP connector for Claude right now.</p>
+                <ul class="gs-dialog-bullets">
+                  <li><strong>Dropbox</strong> — doesn't have an MCP connector at all yet.</li>
+                  <li><strong>Google Drive</strong> — has a connector, but it's limited and unreliable in practice.</li>
+                  <li><strong>OneDrive</strong> — only available on enterprise / team plans, and what's there is limited.</li>
+                  <li><strong>Box</strong> — not perfect, but of the options with real MCP support today, by far the most usable.</li>
+                </ul>
+                <p class="gs-dialog-note">This landscape is moving fast. We'll switch to whatever works best when that changes.</p>
+              </div>
+            </dialog>
 
             <dialog id="dialog-google-fix" class="gs-dialog" aria-labelledby="dialog-google-fix-title">
               <div class="gs-dialog-inner">
@@ -61,7 +77,26 @@ import Footer from '../components/Footer.astro';
           <div class="gs-step-number" aria-hidden="true">2</div>
           <div class="gs-step-body">
             <h2 class="gs-step-title">Create a home for your second brain</h2>
-            <p>In Box, create a folder called <code>Claude</code>. That's where your second brain lives.</p>
+            <p>In Box, create a folder called <code>Claude</code>. That's where your second brain will live.</p>
+            <aside class="gs-note" role="note">
+              <p><strong>Heads-up:</strong> Claude will build out a structure inside this folder during setup. It's tuned by ExFu to align with Claude's way of working, so it can stay organised across sessions and devices. Don't be thrown if it doesn't look like how you'd lay things out yourself. That's by design. You don't have to plan or curate what goes in here. Claude adapts to how you work, so your own files and folders can stay exactly how you like them.</p>
+            </aside>
+            <button type="button" class="gs-inline-link gs-why-substrate-link" data-dialog-open="dialog-why-substrate">Why not just use Claude's built-in features?</button>
+
+            <dialog id="dialog-why-substrate" class="gs-dialog" aria-labelledby="dialog-why-substrate-title">
+              <div class="gs-dialog-inner">
+                <button type="button" class="gs-dialog-close" data-dialog-close aria-label="Close">&times;</button>
+                <h3 id="dialog-why-substrate-title" class="gs-dialog-title">Why not just use Claude's built-in features?</h3>
+                <p class="gs-dialog-para">Fair question. Claude has Projects, memory, and Dispatch, and Anthropic is moving in this direction. Over time, some of what the substrate does will become native. Right now, there are real gaps the substrate fills:</p>
+                <ul class="gs-dialog-bullets">
+                  <li><strong>Desktop and mobile parity.</strong> Cowork on desktop and the Claude mobile app don't interoperate cleanly today. If your day spans both surfaces, the substrate's file-based approach bridges them: the same files show up from either side, via Box.</li>
+                  <li><strong>Memory you can see and edit.</strong> Claude Projects has a memory concept, but the memories are hidden and not user-editable. With the substrate, "memory" is a folder of plain-text files. You can read it, fix it, extend it, move it.</li>
+                  <li><strong>Portability across AI providers.</strong> Claude Projects is Claude's. The substrate's core, the files, is platform-agnostic. If you ever want to try Gemini or run multiple assistants against the same knowledge base, only the skills need porting.</li>
+                  <li><strong>Obsidian-style tooling.</strong> If you use (or want to use) a knowledge tool with graph navigation, the substrate is already just markdown files.</li>
+                </ul>
+                <p class="gs-dialog-note">ExFu's approach is to use plain text files with simple conventions for Claude. For now it fills the above gaps and keeps your AI second brain aligned across devices.</p>
+              </div>
+            </dialog>
           </div>
         </article>
 
@@ -95,9 +130,8 @@ import Footer from '../components/Footer.astro';
           </div>
         </article>
 
-        <aside class="gs-tip reveal">
-          <h3 class="gs-tip-title">One tip for later</h3>
-          <p>You won't need to point Claude at your folder every time. In future sessions, use the <strong>"Work in project"</strong> dropdown just below the chat box and pick your <code>Claude</code> folder so Claude knows where to work from.</p>
+        <aside class="gs-note gs-tip reveal" role="note">
+          <p><strong>One tip for later:</strong> you won't need to point Claude at your folder every time. In future sessions, use the <strong>"Work in Project"</strong> or <strong>"Work in Folder"</strong> dropdown just below the chat box and pick your <code>Claude</code> folder so Claude knows where to work from.</p>
         </aside>
 
         <p class="gs-stuck reveal">Stuck? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
@@ -234,7 +268,8 @@ import Footer from '../components/Footer.astro';
     color: var(--color-accent);
   }
 
-  .gs-warning-link {
+  .gs-warning-link,
+  .gs-inline-link {
     background: none;
     border: none;
     padding: 0;
@@ -247,8 +282,39 @@ import Footer from '../components/Footer.astro';
     transition: color var(--duration-fast) var(--ease-out);
   }
 
-  .gs-warning-link:hover {
+  .gs-warning-link:hover,
+  .gs-inline-link:hover {
     color: var(--color-accent-hover);
+  }
+
+  .gs-inline-link {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: var(--text-small);
+  }
+
+  .gs-why-box-link,
+  .gs-why-substrate-link {
+    margin-top: var(--space-md);
+  }
+
+  .gs-note {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-left: 3px solid var(--color-muted);
+    background: rgba(138, 132, 124, 0.06);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .gs-note p {
+    font-size: var(--text-body);
+    line-height: 1.65;
+    color: var(--color-text-light);
+    margin-bottom: 0;
+  }
+
+  .gs-note strong {
+    color: var(--color-primary);
   }
 
   /* Dialog */
@@ -343,6 +409,40 @@ import Footer from '../components/Footer.astro';
     border-top: 1px solid rgba(138, 132, 124, 0.2);
   }
 
+  .gs-dialog-para {
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .gs-dialog-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .gs-dialog-bullets li {
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    padding-left: var(--space-md);
+    position: relative;
+  }
+
+  .gs-dialog-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
   /* Copy block */
   .gs-copy-block {
     position: relative;
@@ -388,35 +488,9 @@ import Footer from '../components/Footer.astro';
     background: #5C7845; /* warm moss green for confirmation; kept out of palette vars */
   }
 
-  /* Tip card */
+  /* Tip — same look as .gs-note, just extra top spacing since it sits below step 4 */
   .gs-tip {
     margin-top: var(--space-2xl);
-    padding: var(--space-lg) var(--space-xl);
-    background: var(--color-surface-dark);
-    color: var(--color-text-dark);
-    border-radius: 6px;
-  }
-
-  .gs-tip-title {
-    font-family: var(--font-body);
-    font-size: var(--text-small);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
-  }
-
-  .gs-tip p {
-    font-size: var(--text-body-lg);
-    line-height: 1.7;
-    color: var(--color-text-dark);
-    max-width: none;
-  }
-
-  .gs-tip code {
-    background: rgba(237, 233, 228, 0.1);
-    color: var(--color-text-dark);
   }
 
   .gs-stuck {
@@ -445,10 +519,6 @@ import Footer from '../components/Footer.astro';
 
     .gs-step-number {
       font-size: var(--text-h3);
-    }
-
-    .gs-tip {
-      padding: var(--space-md);
     }
 
     .gs-copy-block {
