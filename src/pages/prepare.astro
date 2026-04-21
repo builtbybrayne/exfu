@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/setup-pages.css';
+---
+
+<BaseLayout
+  title="Prepare — ExFu"
+  description="Before our session: a couple of apps to install, a folder to create, and a few settings to flip."
+>
+  <Nav />
+  <main id="main">
+    <section class="gs-hero">
+      <div class="gs-hero-inner section-container">
+        <h1 class="gs-title">Before our session</h1>
+        <p class="gs-lede">A couple of apps to install, a folder to create, and a few settings to flip.</p>
+      </div>
+    </section>
+
+    <section class="gs-steps">
+      <div class="gs-steps-inner section-container">
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">1</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Install the apps</h2>
+            <ul class="gs-install-list">
+              <li>
+                <strong>Claude</strong> — install on every device you'll use.
+                <a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Download options</a> covers desktop, iOS, and Android.
+              </li>
+              <li>
+                <strong>Box</strong> — install on every device you'll use. Sign up for a free Box account first if you don't have one.
+                <a href="https://www.box.com/resources/downloads" target="_blank" rel="noopener noreferrer">Download options</a> covers Box Drive (desktop) and Box mobile (iOS/Android).
+              </li>
+            </ul>
+            <aside class="gs-warning" role="note">
+              <strong>One catch:</strong> don't use "Sign in with Google" when authenticating Box. It breaks the Box Drive login flow. Use an email and password instead. <button type="button" class="gs-warning-link" data-dialog-open="dialog-google-fix">Already used Google login?</button>
+            </aside>
+            <button type="button" class="gs-inline-link gs-why-box-link" data-dialog-open="dialog-why-box">Why Box and not Dropbox / Google Drive / OneDrive?</button>
+
+            <dialog id="dialog-why-box" class="gs-dialog" aria-labelledby="dialog-why-box-title">
+              <div class="gs-dialog-inner">
+                <button type="button" class="gs-dialog-close" data-dialog-close aria-label="Close">&times;</button>
+                <h3 id="dialog-why-box-title" class="gs-dialog-title">Why Box and not Dropbox, Google Drive, or OneDrive?</h3>
+                <p class="gs-dialog-para">Short answer: Box is the only mainstream cloud file system with a properly working MCP connector for Claude right now.</p>
+                <ul class="gs-dialog-bullets">
+                  <li><strong>Dropbox</strong> &mdash; doesn't have an MCP connector at all yet.</li>
+                  <li><strong>Google Drive</strong> &mdash; has a connector, but it's limited and unreliable in practice.</li>
+                  <li><strong>OneDrive</strong> &mdash; only available on enterprise / team plans, and what's there is limited.</li>
+                  <li><strong>Box</strong> &mdash; not perfect, but of the options with real MCP support today, by far the most usable.</li>
+                </ul>
+                <p class="gs-dialog-note">This landscape is moving fast. We'll switch to whatever works best when that changes.</p>
+              </div>
+            </dialog>
+
+            <dialog id="dialog-google-fix" class="gs-dialog" aria-labelledby="dialog-google-fix-title">
+              <div class="gs-dialog-inner">
+                <button type="button" class="gs-dialog-close" data-dialog-close aria-label="Close">&times;</button>
+                <h3 id="dialog-google-fix-title" class="gs-dialog-title">Already signed up with Google? Fix it like this.</h3>
+                <ol class="gs-dialog-list">
+                  <li>
+                    <strong>Reset your Box password first.</strong> Go to <a href="https://account.box.com/login/reset-password" target="_blank" rel="noopener noreferrer">Box password reset</a> and set a proper password for your account. You need this before disconnecting Google, otherwise you'll lock yourself out.
+                  </li>
+                  <li>
+                    <strong>Then disconnect Google.</strong> In Box, open <strong>Account Settings &rarr; Integrations &rarr; Applications linked to your account</strong>, find Google in the list, and remove it.
+                  </li>
+                </ol>
+                <p class="gs-dialog-note">Once that's done, sign back into Box Drive with your email and new password. You're good to continue from step 2.</p>
+              </div>
+            </dialog>
+          </div>
+        </article>
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">2</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Create a home for your second brain</h2>
+            <p>In Box, create a folder called <code>Claude</code>. That's where your second brain will live.</p>
+            <aside class="gs-note" role="note">
+              <p><strong>Heads-up:</strong> Claude will build out a structure inside this folder during setup. It's tuned by ExFu to align with Claude's way of working, so it can stay organised across sessions and devices. Don't be thrown if it doesn't look like how you'd lay things out yourself. That's by design. You don't have to plan or curate what goes in here. Claude will do that itself. This lets it adapt to how you work, so your own files and folders can stay exactly how you like them.</p>
+            </aside>
+            <button type="button" class="gs-inline-link gs-why-substrate-link" data-dialog-open="dialog-why-substrate">Why not just use Claude's built-in features?</button>
+
+            <dialog id="dialog-why-substrate" class="gs-dialog" aria-labelledby="dialog-why-substrate-title">
+              <div class="gs-dialog-inner">
+                <button type="button" class="gs-dialog-close" data-dialog-close aria-label="Close">&times;</button>
+                <h3 id="dialog-why-substrate-title" class="gs-dialog-title">Why not just use Claude's built-in features?</h3>
+                <p class="gs-dialog-para">Fair question. Claude has Projects, memory, and Dispatch, and Anthropic is moving in this direction. Over time, some of what the substrate does will become native. Right now, there are real gaps the substrate fills:</p>
+                <ul class="gs-dialog-bullets">
+                  <li><strong>Desktop and mobile parity.</strong> Cowork on desktop and the Claude mobile app don't interoperate cleanly today. If your day spans both surfaces, the substrate's file-based approach bridges them: the same files show up from either side, via Box.</li>
+                  <li><strong>Memory you can see and edit.</strong> Claude Projects has a memory concept, but the memories are hidden and not user-editable. With the substrate, "memory" is a folder of plain-text files. You can read it, fix it, extend it, move it.</li>
+                  <li><strong>Portability across AI providers.</strong> Claude Projects is Claude's. The substrate's core, the files, is platform-agnostic. If you ever want to try Gemini or run multiple assistants against the same knowledge base, only the skills need porting.</li>
+                  <li><strong>Obsidian-style tooling.</strong> If you use (or want to use) a knowledge tool with graph navigation, the substrate is already just markdown files.</li>
+                </ul>
+                <p class="gs-dialog-note">ExFu's approach is to use plain text files with simple conventions for Claude. For now it fills the above gaps and keeps your AI second brain aligned across devices.</p>
+              </div>
+            </dialog>
+          </div>
+        </article>
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">3</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Flip the Claude settings</h2>
+            <p>Open Claude Desktop &rarr; <strong>Settings</strong> and turn on these. If the layout has changed since this was written, the settings still exist, just look harder or ask.</p>
+            <ul class="gs-settings-list">
+              <li>
+                <strong>General &rarr; Account</strong>
+                <ul class="gs-settings-sublist">
+                  <li>Dispatch messages</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Capabilities</strong>
+                <ul class="gs-settings-sublist">
+                  <li>Search and reference chats</li>
+                  <li>Generate memory from chat history</li>
+                  <li>Visual (all of them)</li>
+                  <li>Code execution and file creation (all of them)</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Cowork</strong>
+                <ul class="gs-settings-sublist">
+                  <li>Dispatch</li>
+                  <li>Network egress (we need this to fetch the setup files during our session)</li>
+                  <li>Keep Computer Awake</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">4</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Connect your tools</h2>
+            <p>Open Claude Desktop &rarr; <strong>Settings &rarr; Connectors</strong>. Connect Box (we'll use it), plus any of these you already live in:</p>
+            <ul class="gs-connect-list">
+              <li>
+                <strong>Essentials</strong>
+                <ul class="gs-connect-sublist">
+                  <li>Box</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Email, calendar, drive</strong>
+                <ul class="gs-connect-sublist">
+                  <li>Gmail, Google Calendar, Google Drive</li>
+                  <li>Outlook Mail, Outlook Calendar, OneDrive</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Team chat</strong>
+                <ul class="gs-connect-sublist">
+                  <li>Slack, Teams, or Discord</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Task trackers</strong>
+                <ul class="gs-connect-sublist">
+                  <li>Linear, ClickUp, Asana, Notion, or Todoist</li>
+                </ul>
+              </li>
+            </ul>
+            <p>Skip anything that doesn't apply. We'll finish the rest together in our session.</p>
+          </div>
+        </article>
+
+        <p class="gs-closing reveal">That's it. See you at our session.</p>
+
+        <p class="gs-stuck reveal">Stuck on any of this? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Dialog open/close
+  document.querySelectorAll<HTMLButtonElement>('[data-dialog-open]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-dialog-open');
+      if (!id) return;
+      const dialog = document.getElementById(id) as HTMLDialogElement | null;
+      dialog?.showModal();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-dialog-close]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const dialog = btn.closest('dialog') as HTMLDialogElement | null;
+      dialog?.close();
+    });
+  });
+
+  // Close on backdrop click
+  document.querySelectorAll<HTMLDialogElement>('dialog').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+</script>

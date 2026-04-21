@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/setup-pages.css';
+---
+
+<BaseLayout
+  title="Start the session — ExFu"
+  description="Paste a prompt, hit enter, Claude takes over."
+>
+  <Nav />
+  <main id="main">
+    <section class="gs-hero">
+      <div class="gs-hero-inner section-container">
+        <h1 class="gs-title">Start the session</h1>
+        <p class="gs-lede">One prompt to paste. Claude takes it from there.</p>
+      </div>
+    </section>
+
+    <section class="gs-steps">
+      <div class="gs-steps-inner section-container">
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">1</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Check you're prepped</h2>
+            <p>If you haven't worked through the <a href="/prepare">preparation steps</a>, start there first. Apps installed, <code>Claude</code> folder in Box, settings flipped, connectors wired up.</p>
+          </div>
+        </article>
+
+        <article class="gs-step reveal">
+          <div class="gs-step-number" aria-hidden="true">2</div>
+          <div class="gs-step-body">
+            <h2 class="gs-step-title">Kick off the setup</h2>
+            <p>Open a new Cowork task in Claude Desktop and paste this:</p>
+
+            <div class="gs-copy-block">
+              <pre id="gs-setup-prompt" class="gs-prompt">I'm setting up a second brain for Claude, using ExFu's substrate system. I just created a `Claude` folder in Box for this. Ask for permission to work in that folder, then fetch and follow the instructions at https://exfu.ai/clients/start.md.</pre>
+              <button
+                class="gs-copy-btn"
+                type="button"
+                data-copy-target="gs-setup-prompt"
+                aria-label="Copy prompt to clipboard"
+              >
+                <span class="gs-copy-btn-label">Copy</span>
+              </button>
+            </div>
+
+            <p>Hit enter. Claude takes it from there.</p>
+          </div>
+        </article>
+
+        <aside class="gs-note gs-tip reveal" role="note">
+          <p><strong>One tip for later:</strong> you won't need to point Claude at your folder every time. In future sessions, use the <strong>"Work in Project"</strong> or <strong>"Work in Folder"</strong> dropdown just below the chat box and pick your <code>Claude</code> folder so Claude knows where to work from.</p>
+        </aside>
+
+        <p class="gs-stuck reveal">Stuck? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Copy-to-clipboard
+  document.querySelectorAll<HTMLButtonElement>('.gs-copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const targetId = btn.getAttribute('data-copy-target');
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const text = target.textContent ?? '';
+      const label = btn.querySelector<HTMLElement>('.gs-copy-btn-label');
+      const originalLabel = label?.textContent ?? 'Copy';
+
+      const flashSuccess = () => {
+        if (label) label.textContent = 'Copied';
+        btn.setAttribute('data-copied', 'true');
+        window.setTimeout(() => {
+          if (label) label.textContent = originalLabel;
+          btn.removeAttribute('data-copied');
+        }, 1800);
+      };
+
+      try {
+        await navigator.clipboard.writeText(text);
+        flashSuccess();
+      } catch {
+        // Fallback for older browsers / non-secure contexts
+        const range = document.createRange();
+        range.selectNode(target);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+        try {
+          document.execCommand('copy');
+          flashSuccess();
+        } catch {
+          if (label) label.textContent = 'Copy failed';
+          window.setTimeout(() => {
+            if (label) label.textContent = originalLabel;
+          }, 1800);
+        }
+        sel?.removeAllRanges();
+      }
+    });
+  });
+</script>

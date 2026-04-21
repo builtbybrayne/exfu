@@ -131,7 +131,7 @@ The substrate needs a home. We use Box because it's accessible from every Claude
 
 **Box MCP connector** — Claude Settings → Connectors → Box → connect and authorise. Confirm it shows as connected.
 
-**Knowledge base folder** — the user has already created one in Box (typically `Claude`) and granted you permission to work in it as part of the get-started flow. Confirm the folder name with them. Note down two things:
+**Knowledge base folder** — the user has already created one in Box (typically `Claude`) and granted you permission to work in it as part of the preparation steps. Confirm the folder name with them. Note down two things:
 - The **local path** where Box Drive mounts it (needed for scheduled tasks later)
 - The **folder name in Box** (needed for connector operations)
 
