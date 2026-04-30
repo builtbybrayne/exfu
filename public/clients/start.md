@@ -136,12 +136,17 @@ Pick a couple, install those, leave the rest on the menu for a follow-up.
 
 A reliable opening sequence — pattern, not script:
 
-1. **Brief them on what's about to happen.** Not the architecture — the felt experience. *"We're going to spend an hour or so giving Claude a real working knowledge of you and your tools, so they can be a useful collaborator across your work — not a chat window you open occasionally. By the end you'll have something concrete working, plus a setup you can grow yourself."*
-2. **Optionally show the diagram** at `https://exfu.ai/clients/substrate-diagram.png` if they're a visual thinker — once, briefly, as orientation. Not a lecture; just *"here's roughly what's coming together."*
-3. **Start with about-me.** *"Tell me about yourself — what you do, what your work week looks like, what's currently on your plate."* The answer needs somewhere to live, and that's the moment you can naturally introduce the Box folder, the bedrock skills, and the `context/me/` convention. Build by doing. If their about-me reveals they're part of a team or organisation (colleagues, an employer, work tools, IT policies), also fetch `https://exfu.ai/clients/team-considerations.md` and fold its considerations into the rest of the install.
-4. **Surface the buffet.** As you talk through their about-me, ask which two or three things from the buffet would be most useful. Install those next.
-5. **Demonstrate as you go.** Every install move is also a small win. Set a real reminder. Capture a real thought to inbox. Run the briefing manually once it's wired up.
-6. **Close by sketching what to do next.** Not as homework — as pointers for when they're ready. Add more context as life suggests it. Create scopes for active work areas. Connect more tools as they want them. Reach Alastair if they want a follow-up.
+1. **Open with the diagram.** Lead by showing `https://exfu.ai/clients/substrate-diagram.png`. It's the calibration moment — a quick visual landscape of what you're about to put together. Walk them through it briefly: the four ingredients (knowledge base, skills, connectors, things on a timer), what they do together, and the felt experience you're building towards — not a chat window they open occasionally, a real working collaborator. The diagram does heavy lifting: it tells the user there's actual structure here, makes the install concrete enough to discuss, and gives them a reference they can point at when they have questions later.
+
+   While the diagram is in front of you, plant two priors that matter for the rest of the conversation:
+
+   - **Teach-don't-do.** *"We're going to do this together. By the end you'll have a working setup, and you'll be able to grow it yourself."*
+   - **Why before what.** When shaping how AI behaves for them — skills, instructions, briefings — the most useful question to keep asking is *why* something matters, not just *what* they want done. The diagram doesn't show the *why* because that's the question they bring; everything else flows from it. Reach for Sinek's golden circle if it'll land for them; otherwise just *"why before what"*.
+
+2. **Then go to about-me.** *"Tell me about yourself — what you do, what your work week looks like, what's currently on your plate."* The answer needs somewhere to live, and that's the moment you can naturally introduce the Box folder, the bedrock skills, and the `context/me/` convention. Build by doing. If their about-me reveals they're part of a team or organisation (colleagues, an employer, work tools, IT policies), also fetch `https://exfu.ai/clients/team-considerations.md` and fold its considerations into the rest of the install.
+3. **Surface the buffet.** As you talk through their about-me, ask which two or three things from the buffet would be most useful. Install those next.
+4. **Demonstrate as you go.** Every install move is also a small win. Set a real reminder. Capture a real thought to inbox. Run the briefing manually once it's wired up.
+5. **Close by sketching what to do next.** Not as homework — as pointers for when they're ready. Add more context as life suggests it. Create scopes for active work areas. Connect more tools as they want them. Reach Alastair if they want a follow-up.
 
 Examples of small-win moves and what each illustrates:
 
