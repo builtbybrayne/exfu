@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import '../styles/setup-pages.css';
 
 // Version numbers from plugin manifests
-const SOLO_VERSION = '0.1.0';
-const TEAM_VERSION = '0.1.0';
-const TEAM_ADMIN_VERSION = '0.1.0';
+const SOLO_VERSION = '0.2.0';
+const TEAM_VERSION = '0.2.0';
+const TEAM_ADMIN_VERSION = '0.2.0';
 
 const SOLO_DOWNLOAD_URL = `/downloads/exfu-solo-v${SOLO_VERSION}.zip`;
 const TEAM_DOWNLOAD_URL = `/downloads/exfu-team-v${TEAM_VERSION}.zip`;
@@ -164,15 +164,17 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
       </div>
     </section>
 
-    <!-- Archive (collapsed, empty for v0.1.0) -->
+    <!-- Archive (collapsed by default) -->
     <section class="ip-archive">
       <div class="ip-archive-inner section-container">
         <details class="ip-archive-details">
           <summary class="ip-archive-summary">Previous versions</summary>
           <div class="ip-archive-body">
-            <p class="ip-archive-empty">No previous versions. This is v0.1.0.</p>
-            <!-- TODO: Populate archive entries here as new versions ship.
-                 Pattern: <li><a href="/downloads/exfu-solo-vX.Y.Z.zip">exfu-solo vX.Y.Z</a></li> -->
+            <ul class="ip-archive-list">
+              <li><a href="/downloads/exfu-solo-v0.1.0.zip">exfu-solo v0.1.0</a></li>
+              <li><a href="/downloads/exfu-team-v0.1.0.zip">exfu-team v0.1.0</a></li>
+              <li><a href="/downloads/exfu-team-admin-v0.1.0.zip">exfu-team-admin v0.1.0</a></li>
+            </ul>
           </div>
         </details>
       </div>
