@@ -1,0 +1,605 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/setup-pages.css';
+
+// Version numbers from plugin manifests
+const SOLO_VERSION = '0.1.0';
+const TEAM_VERSION = '0.1.0';
+const TEAM_ADMIN_VERSION = '0.1.0';
+
+// TODO: Update these URLs once the build pipeline places plugin files in public/downloads/
+const SOLO_DOWNLOAD_URL = `/downloads/exfu-solo-v${SOLO_VERSION}.tar.gz`;
+const TEAM_DOWNLOAD_URL = `/downloads/exfu-team-v${TEAM_VERSION}.tar.gz`;
+const TEAM_ADMIN_DOWNLOAD_URL = `/downloads/exfu-team-admin-v${TEAM_ADMIN_VERSION}.tar.gz`;
+
+// TODO: Replace with canonical Anthropic plugin install docs URL when confirmed
+const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
+---
+
+<BaseLayout
+  title="Install — ExFu"
+  description="Download the ExFu plugins for Claude Code. Solo for individuals, Team for team members."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="ip-hero">
+      <div class="ip-hero-inner section-container">
+        <h1 class="ip-title">Install ExFu</h1>
+        <p class="ip-lede">Three Claude Code plugins. Pick the one that fits where you are.</p>
+      </div>
+    </section>
+
+    <!-- Plugin overview cards -->
+    <section class="ip-plugins">
+      <div class="ip-plugins-inner section-container">
+
+        <div class="ip-plugin-grid">
+
+          <article class="ip-plugin-card reveal">
+            <div class="ip-plugin-header">
+              <h2 class="ip-plugin-name">ExFu Solo</h2>
+              <span class="ip-version">v{SOLO_VERSION}</span>
+            </div>
+            <p class="ip-plugin-desc">Personal Claude install for individuals. Your knowledge base, your preferences, your cloud drive.</p>
+            <a
+              href={SOLO_DOWNLOAD_URL}
+              class="ip-download-btn"
+              download
+            >
+              Download Solo
+            </a>
+          </article>
+
+          <article class="ip-plugin-card reveal">
+            <div class="ip-plugin-header">
+              <h2 class="ip-plugin-name">ExFu Team</h2>
+              <span class="ip-version">v{TEAM_VERSION}</span>
+            </div>
+            <p class="ip-plugin-desc">Personal Claude install for team members. Your personal layer runs on top of your team's shared substrate.</p>
+            <a
+              href={TEAM_DOWNLOAD_URL}
+              class="ip-download-btn"
+              download
+            >
+              Download Team
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Which plugin section -->
+    <section class="ip-which">
+      <div class="ip-which-inner section-container">
+        <h2 class="ip-section-title reveal">Which plugin is for me?</h2>
+
+        <div class="ip-which-grid">
+
+          <div class="ip-which-card reveal">
+            <h3 class="ip-which-name">Solo</h3>
+            <p>You're a founder, senior operator, or solo professional. You want Claude as a real working collaborator for yourself. Storage: your cloud drive.</p>
+          </div>
+
+          <div class="ip-which-card reveal">
+            <h3 class="ip-which-name">Team</h3>
+            <p>You're joining a team that already has its substrate set up. You want your personal Claude on top of the shared one. Storage: your team's git repo.</p>
+          </div>
+
+          <div class="ip-which-card ip-which-card--secondary reveal">
+            <h3 class="ip-which-name">Team-admin</h3>
+            <p>You're the substrate champion for your team. You'll set up the shared substrate, design conventions, brief IT, and onboard colleagues. If that's not you, the team plugin is what you want.</p>
+            <p class="ip-which-admin-note">
+              <a href={TEAM_ADMIN_DOWNLOAD_URL} class="ip-admin-link" download>Download team-admin v{TEAM_ADMIN_VERSION}</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick start -->
+    <section class="ip-quickstart">
+      <div class="ip-quickstart-inner section-container">
+        <h2 class="ip-section-title reveal">Quick start</h2>
+
+        <ol class="ip-steps reveal">
+          <li>
+            <span class="ip-step-num" aria-hidden="true">1</span>
+            <span>Download the plugin file above.</span>
+          </li>
+          <li>
+            <span class="ip-step-num" aria-hidden="true">2</span>
+            <span>Install it in Claude Code. (<a href={ANTHROPIC_PLUGIN_DOCS_URL} target="_blank" rel="noopener noreferrer">Plugin install instructions</a> {/* TODO: confirm Anthropic docs URL */})</span>
+          </li>
+          <li>
+            <span class="ip-step-num" aria-hidden="true">3</span>
+            <span>Run <code>/exfu</code> to start.</span>
+          </li>
+        </ol>
+
+        <p class="ip-stuck reveal">Questions? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
+
+      </div>
+    </section>
+
+    <!-- Pre-read for the curious -->
+    <section class="ip-primer">
+      <div class="ip-primer-inner section-container">
+        <h2 class="ip-section-title reveal">Want to read first?</h2>
+        <p class="reveal">
+          A substrate primer is bundled inside each plugin at <code>resources/substrate-primer.md</code>.
+          Once installed, Claude can walk you through it.
+          We'll publish a standalone version here separately.
+          {/* TODO: Add link to public primer when it's available */}
+        </p>
+      </div>
+    </section>
+
+    <!-- Ecosystem references -->
+    <section class="ip-ecosystem">
+      <div class="ip-ecosystem-inner section-container">
+        <h2 class="ip-section-title reveal">More on Claude</h2>
+        <p class="ip-ecosystem-lede reveal">ExFu is one way in. Here are some useful places to go further.</p>
+
+        <ul class="ip-ecosystem-links reveal">
+          <li>
+            <a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer">Anthropic docs</a>
+            <span class="ip-eco-desc">Official reference for Claude and the API.</span>
+          </li>
+          <li>
+            <a href="https://claude.ai/learn" target="_blank" rel="noopener noreferrer">Claude help centre</a>
+            <span class="ip-eco-desc">Getting started guides and FAQs from Anthropic.</span>
+          </li>
+          <li>
+            <a href="https://claude101.com" target="_blank" rel="noopener noreferrer">Claude101</a>
+            <span class="ip-eco-desc">Independent community guide to getting the most from Claude.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Archive (collapsed, empty for v0.1.0) -->
+    <section class="ip-archive">
+      <div class="ip-archive-inner section-container">
+        <details class="ip-archive-details">
+          <summary class="ip-archive-summary">Previous versions</summary>
+          <div class="ip-archive-body">
+            <p class="ip-archive-empty">No previous versions. This is v0.1.0.</p>
+            <!-- TODO: Populate archive entries here as new versions ship.
+                 Pattern: <li><a href="/downloads/exfu-solo-vX.Y.Z.tar.gz">exfu-solo vX.Y.Z</a></li> -->
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ----------------------------------------
+     Hero
+  ---------------------------------------- */
+  .ip-hero {
+    background: var(--color-surface-dark);
+    color: var(--color-text-dark);
+    padding-top: calc(var(--space-3xl) + 60px); /* account for fixed nav */
+    padding-bottom: var(--space-2xl);
+  }
+
+  .ip-hero-inner {
+    max-width: var(--max-width);
+  }
+
+  .ip-title {
+    font-family: var(--font-display);
+    font-size: var(--text-hero);
+    font-weight: 400;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .ip-lede {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-muted);
+  }
+
+  /* ----------------------------------------
+     Shared section scaffolding
+  ---------------------------------------- */
+  .ip-plugins,
+  .ip-which,
+  .ip-primer,
+  .ip-ecosystem,
+  .ip-archive {
+    padding-block: var(--section-padding);
+  }
+
+  .ip-quickstart {
+    padding-block: var(--section-padding);
+    background: var(--color-surface-dark);
+    color: var(--color-text-dark);
+  }
+
+  .ip-plugins {
+    background: var(--color-surface-light);
+  }
+
+  .ip-which {
+    background: var(--color-surface-light);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .ip-primer {
+    background: var(--color-surface-light);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .ip-ecosystem {
+    background: var(--color-surface-light);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .ip-archive {
+    background: var(--color-surface-light);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .ip-plugins-inner,
+  .ip-which-inner,
+  .ip-quickstart-inner,
+  .ip-primer-inner,
+  .ip-ecosystem-inner,
+  .ip-archive-inner {
+    max-width: 50rem;
+  }
+
+  .ip-section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .ip-quickstart .ip-section-title {
+    color: var(--color-text-dark);
+  }
+
+  /* ----------------------------------------
+     Plugin cards (solo + team)
+  ---------------------------------------- */
+  .ip-plugin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .ip-plugin-card {
+    background: white;
+    border: 1px solid rgba(138, 132, 124, 0.2);
+    border-radius: 8px;
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .ip-plugin-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .ip-plugin-name {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    color: var(--color-primary);
+  }
+
+  .ip-version {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    color: var(--color-muted);
+  }
+
+  .ip-plugin-desc {
+    font-size: var(--text-body);
+    line-height: 1.65;
+    color: var(--color-text-light);
+    flex-grow: 1;
+    max-width: none;
+  }
+
+  .ip-download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color var(--duration-fast) var(--ease-out);
+    align-self: flex-start;
+  }
+
+  .ip-download-btn:hover {
+    background: var(--color-accent-hover);
+  }
+
+  /* ----------------------------------------
+     Which plugin cards
+  ---------------------------------------- */
+  .ip-which-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .ip-which-card {
+    padding: var(--space-lg) var(--space-xl);
+    border-left: 3px solid var(--color-accent);
+    background: white;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .ip-which-card--secondary {
+    border-left-color: var(--color-muted);
+    background: rgba(138, 132, 124, 0.04);
+  }
+
+  .ip-which-name {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ip-which-card--secondary .ip-which-name {
+    color: var(--color-muted-dark);
+  }
+
+  .ip-which-card p {
+    font-size: var(--text-body);
+    line-height: 1.65;
+    color: var(--color-text-light);
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .ip-which-card--secondary p {
+    color: var(--color-muted-dark);
+  }
+
+  .ip-which-admin-note {
+    margin-top: var(--space-md);
+  }
+
+  .ip-admin-link {
+    font-size: var(--text-small);
+    color: var(--color-muted-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .ip-admin-link:hover {
+    color: var(--color-primary);
+  }
+
+  /* ----------------------------------------
+     Quick start steps
+  ---------------------------------------- */
+  .ip-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    list-style: none;
+    margin-bottom: var(--space-lg);
+  }
+
+  .ip-steps li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    font-size: var(--text-body-lg);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+  }
+
+  .ip-step-num {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    color: var(--color-accent);
+    min-width: 1.5rem;
+    line-height: 1;
+  }
+
+  .ip-steps a {
+    color: var(--color-text-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    opacity: 0.85;
+    transition: opacity var(--duration-fast) var(--ease-out);
+  }
+
+  .ip-steps a:hover {
+    opacity: 1;
+  }
+
+  .ip-steps code {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    padding: 0.1em 0.35em;
+    background: rgba(237, 233, 228, 0.15);
+    border-radius: 3px;
+    color: var(--color-text-dark);
+  }
+
+  .ip-stuck {
+    font-size: var(--text-body);
+    color: rgba(237, 233, 228, 0.55);
+    margin-top: var(--space-sm);
+    max-width: none;
+  }
+
+  .ip-stuck a {
+    color: rgba(237, 233, 228, 0.75);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .ip-stuck a:hover {
+    color: var(--color-text-dark);
+  }
+
+  /* ----------------------------------------
+     Primer section
+  ---------------------------------------- */
+  .ip-primer-inner p {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-text-light);
+    max-width: none;
+  }
+
+  .ip-primer-inner code {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    padding: 0.1em 0.35em;
+    background: rgba(186, 67, 47, 0.08);
+    border-radius: 3px;
+    color: var(--color-primary);
+  }
+
+  /* ----------------------------------------
+     Ecosystem links
+  ---------------------------------------- */
+  .ip-ecosystem-lede {
+    font-size: var(--text-body-lg);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    max-width: none;
+  }
+
+  .ip-ecosystem-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    list-style: none;
+  }
+
+  .ip-ecosystem-links li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .ip-ecosystem-links a {
+    font-size: var(--text-body);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .ip-ecosystem-links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .ip-eco-desc {
+    font-size: var(--text-body);
+    color: var(--color-muted-dark);
+  }
+
+  /* ----------------------------------------
+     Archive
+  ---------------------------------------- */
+  .ip-archive-details {
+    border: 1px solid rgba(138, 132, 124, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .ip-archive-summary {
+    padding: var(--space-md) var(--space-lg);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    color: var(--color-muted-dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .ip-archive-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ip-archive-summary::before {
+    content: '▸';
+    font-size: 0.75em;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  details[open] .ip-archive-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .ip-archive-summary:hover {
+    color: var(--color-primary);
+  }
+
+  .ip-archive-body {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    border-top: 1px solid rgba(138, 132, 124, 0.15);
+  }
+
+  .ip-archive-empty {
+    font-size: var(--text-body);
+    color: var(--color-muted);
+    font-style: italic;
+    max-width: none;
+  }
+
+  /* ----------------------------------------
+     Responsive
+  ---------------------------------------- */
+  @media (max-width: 640px) {
+    .ip-plugin-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ip-which-card {
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .ip-steps li {
+      gap: var(--space-sm);
+    }
+  }
+</style>
