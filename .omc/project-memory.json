@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1776717162239,
+  "lastScanned": 1777677106809,
   "projectRoot": "/Users/al/Studio/projects/exfu_website",
   "techStack": {
     "languages": [
@@ -65,14 +65,14 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1776717162164,
+      "lastAccessed": 1777677106776,
       "keyFiles": []
     },
     "dist": {
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 17,
-      "lastAccessed": 1776717162169,
+      "lastAccessed": 1777677106777,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -81,11 +81,18 @@
         "exfu_favicon.svg"
       ]
     },
+    "plugin": {
+      "path": "plugin",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1777677106779,
+      "keyFiles": []
+    },
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 32,
-      "lastAccessed": 1776717162170,
+      "fileCount": 33,
+      "lastAccessed": 1777677106779,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -98,14 +105,21 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1776717162171,
+      "lastAccessed": 1777677106780,
+      "keyFiles": []
+    },
+    "plugin/src": {
+      "path": "plugin/src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1777677106780,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 12,
-      "lastAccessed": 1776717162173,
+      "lastAccessed": 1777677106781,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -115,94 +129,15 @@
     "src/pages": {
       "path": "src/pages",
       "purpose": "Page components",
-      "fileCount": 4,
-      "lastAccessed": 1776717162174,
+      "fileCount": 5,
+      "lastAccessed": 1777677106781,
       "keyFiles": [
         "404.astro",
-        "get-started.astro",
-        "index.astro"
+        "index.astro",
+        "prepare.astro"
       ]
     }
   },
-  "hotPaths": [
-    {
-      "path": "src/pages/get-started.astro",
-      "accessCount": 51,
-      "lastAccessed": 1776773274179,
-      "type": "file"
-    },
-    {
-      "path": "public/clients/start.md",
-      "accessCount": 10,
-      "lastAccessed": 1776775279740,
-      "type": "file"
-    },
-    {
-      "path": "public/_redirects",
-      "accessCount": 4,
-      "lastAccessed": 1776775561317,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/prepare.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776779901185,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/start.astro",
-      "accessCount": 4,
-      "lastAccessed": 1776780264794,
-      "type": "file"
-    },
-    {
-      "path": "src/components/Nav.astro",
-      "accessCount": 3,
-      "lastAccessed": 1776774212147,
-      "type": "file"
-    },
-    {
-      "path": "src",
-      "accessCount": 3,
-      "lastAccessed": 1776774269942,
-      "type": "directory"
-    },
-    {
-      "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1776780259276,
-      "type": "directory"
-    },
-    {
-      "path": "src/styles/setup-pages.css",
-      "accessCount": 2,
-      "lastAccessed": 1776774204888,
-      "type": "file"
-    },
-    {
-      "path": "src/styles/global.css",
-      "accessCount": 1,
-      "lastAccessed": 1776717242707,
-      "type": "directory"
-    },
-    {
-      "path": "public/clients",
-      "accessCount": 1,
-      "lastAccessed": 1776719642913,
-      "type": "directory"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "accessCount": 1,
-      "lastAccessed": 1776774212091,
-      "type": "file"
-    },
-    {
-      "path": ".claude/launch.json",
-      "accessCount": 1,
-      "lastAccessed": 1776775286949,
-      "type": "file"
-    }
-  ],
+  "hotPaths": [],
   "userDirectives": []
 }
