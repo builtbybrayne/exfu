@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1777677106809,
+  "lastScanned": 1780332691880,
   "projectRoot": "/Users/al/Studio/projects/exfu_website",
   "techStack": {
     "languages": [
@@ -65,14 +65,14 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1777677106776,
+      "lastAccessed": 1780332691779,
       "keyFiles": []
     },
     "dist": {
       "path": "dist",
       "purpose": "Distribution/build output",
       "fileCount": 17,
-      "lastAccessed": 1777677106777,
+      "lastAccessed": 1780332691780,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -85,14 +85,14 @@
       "path": "plugin",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1777677106779,
+      "lastAccessed": 1780332691781,
       "keyFiles": []
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
       "fileCount": 33,
-      "lastAccessed": 1777677106779,
+      "lastAccessed": 1780332691781,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -105,21 +105,31 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1777677106780,
+      "lastAccessed": 1780332691782,
       "keyFiles": []
+    },
+    "plugin/build": {
+      "path": "plugin/build",
+      "purpose": "Build output",
+      "fileCount": 3,
+      "lastAccessed": 1780332691783,
+      "keyFiles": [
+        "README.md",
+        "build.sh"
+      ]
     },
     "plugin/src": {
       "path": "plugin/src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1777677106780,
+      "lastAccessed": 1780332691783,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 12,
-      "lastAccessed": 1777677106781,
+      "lastAccessed": 1780332691784,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -129,12 +139,12 @@
     "src/pages": {
       "path": "src/pages",
       "purpose": "Page components",
-      "fileCount": 5,
-      "lastAccessed": 1777677106781,
+      "fileCount": 6,
+      "lastAccessed": 1780332691784,
       "keyFiles": [
         "404.astro",
         "index.astro",
-        "prepare.astro"
+        "install.astro"
       ]
     }
   },
