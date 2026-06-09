@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1780332691880,
-  "projectRoot": "/Users/al/Studio/projects/exfu_website",
+  "lastScanned": 1781033690695,
+  "projectRoot": "/Users/al/Studio/projects/exfu_website/.claude/worktrees/intelligent-jang-cdf19f",
   "techStack": {
     "languages": [
       {
@@ -65,34 +65,21 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1780332691779,
+      "lastAccessed": 1781033690667,
       "keyFiles": []
-    },
-    "dist": {
-      "path": "dist",
-      "purpose": "Distribution/build output",
-      "fileCount": 17,
-      "lastAccessed": 1780332691780,
-      "keyFiles": [
-        "_redirects",
-        "about.md",
-        "apple-touch-icon.png",
-        "exfu_favicon.png",
-        "exfu_favicon.svg"
-      ]
     },
     "plugin": {
       "path": "plugin",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1780332691781,
+      "lastAccessed": 1781033690667,
       "keyFiles": []
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 33,
-      "lastAccessed": 1780332691781,
+      "fileCount": 32,
+      "lastAccessed": 1781033690670,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -105,14 +92,14 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1780332691782,
+      "lastAccessed": 1781033690671,
       "keyFiles": []
     },
     "plugin/build": {
       "path": "plugin/build",
       "purpose": "Build output",
       "fileCount": 3,
-      "lastAccessed": 1780332691783,
+      "lastAccessed": 1781033690671,
       "keyFiles": [
         "README.md",
         "build.sh"
@@ -122,14 +109,14 @@
       "path": "plugin/src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1780332691783,
+      "lastAccessed": 1781033690671,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 12,
-      "lastAccessed": 1780332691784,
+      "lastAccessed": 1781033690671,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -139,8 +126,8 @@
     "src/pages": {
       "path": "src/pages",
       "purpose": "Page components",
-      "fileCount": 6,
-      "lastAccessed": 1780332691784,
+      "fileCount": 5,
+      "lastAccessed": 1781033690672,
       "keyFiles": [
         "404.astro",
         "index.astro",
