@@ -167,6 +167,12 @@
       "type": "file"
     },
     {
+      "path": "plugin/example/README.md",
+      "accessCount": 7,
+      "lastAccessed": 1781094418523,
+      "type": "file"
+    },
+    {
       "path": "plugin/example/exfu/latest.txt",
       "accessCount": 6,
       "lastAccessed": 1781038009418,
@@ -176,12 +182,6 @@
       "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/librarian/version-cleanup.md",
       "accessCount": 6,
       "lastAccessed": 1781041463687,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/README.md",
-      "accessCount": 5,
-      "lastAccessed": 1781041788642,
       "type": "file"
     },
     {
