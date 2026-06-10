@@ -198,8 +198,8 @@
     },
     {
       "path": "plugin/planning/M2-substrate-redesign.md",
-      "accessCount": 3,
-      "lastAccessed": 1781036223027,
+      "accessCount": 4,
+      "lastAccessed": 1781053249116,
       "type": "file"
     },
     {
@@ -215,21 +215,27 @@
       "type": "file"
     },
     {
-      "path": "plugin/planning/T2-librarian-framework.md",
-      "accessCount": 2,
-      "lastAccessed": 1781037423273,
+      "path": "plugin/planning/M2.1-exfu-dashboard.md",
+      "accessCount": 3,
+      "lastAccessed": 1781053249723,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/scope-md-format.md",
-      "accessCount": 2,
-      "lastAccessed": 1781037700401,
+      "path": "plugin/planning/T2-librarian-framework.md",
+      "accessCount": 3,
+      "lastAccessed": 1781053258505,
       "type": "file"
     },
     {
       "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/what-is-a-scope.md",
-      "accessCount": 2,
-      "lastAccessed": 1781037712268,
+      "accessCount": 3,
+      "lastAccessed": 1781053333833,
+      "type": "file"
+    },
+    {
+      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/scope-md-format.md",
+      "accessCount": 3,
+      "lastAccessed": 1781053334703,
       "type": "file"
     },
     {
@@ -263,15 +269,21 @@
       "type": "file"
     },
     {
-      "path": "plugin/planning/M2.1-exfu-dashboard.md",
-      "accessCount": 2,
-      "lastAccessed": 1781037807130,
-      "type": "file"
-    },
-    {
       "path": "plugin/planning/T2-exfu-dashboard.md",
       "accessCount": 2,
       "lastAccessed": 1781037807756,
+      "type": "file"
+    },
+    {
+      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/nesting.md",
+      "accessCount": 2,
+      "lastAccessed": 1781053335055,
+      "type": "file"
+    },
+    {
+      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/version-resolution.md",
+      "accessCount": 2,
+      "lastAccessed": 1781053336191,
       "type": "file"
     },
     {
@@ -296,12 +308,6 @@
       "path": "plugin/planning/T3-nightly-index.md",
       "accessCount": 1,
       "lastAccessed": 1781033807977,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/nesting.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033826397,
       "type": "file"
     },
     {
@@ -356,12 +362,6 @@
       "path": "plugin/src/shared/substrate/templates/scope/visualisations/agent.md",
       "accessCount": 1,
       "lastAccessed": 1781033859536,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/version-resolution.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033881338,
       "type": "file"
     },
     {
