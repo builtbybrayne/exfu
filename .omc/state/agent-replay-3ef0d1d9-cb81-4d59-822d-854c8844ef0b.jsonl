@@ -1,0 +1,10 @@
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":51348}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":57316}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":60576}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":63260}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":65274}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":67341}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":70085}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":72080}
+{"t":0,"agent":"a1710f7","agent_type":"claude-code-guide","event":"agent_stop","success":true,"duration_ms":74120}
