@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# agent-plan-visualiser local capture state — never tracked
+.apv/.last-capture
+# agent-plan-visualiser local capture state — never tracked
+.apv/.pending-extract

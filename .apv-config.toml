@@ -1,0 +1,15 @@
+# .apv-config.toml — committed project configuration for agent-plan-visualiser.
+# Lives at the repo root (it names the data dir, so it cannot live inside it).
+# Unknown keys are tolerated by design — this file accrues future config.
+
+[gate]
+# Check ids the integrity composite (gate-composite.py) enforces.
+# blocking = corruption of the record (exit 1); warn = advisory, printed,
+# never failing. Moving an id between the lists changes enforcement
+# without code edits.
+blocking = ["schema", "referential", "sealed-tail", "implementation-on-draft", "resurrection-without-reopen", "fulcrum-without-decision"]
+warn = ["drift", "orphans", "stalled", "long-blockers"]
+
+[storage]
+# APV_DATA_DIR env var overrides this; default is .apv/ when neither is set.
+data_dir = ".apv"
