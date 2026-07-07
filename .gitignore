@@ -26,3 +26,5 @@ pnpm-debug.log*
 .apv/.last-capture
 # agent-plan-visualiser local capture state — never tracked
 .apv/.pending-extract
+# agent-plan-visualiser local per-checkout state — never tracked
+.apv/.toolchain-home
