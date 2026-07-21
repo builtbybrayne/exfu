@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1781033690695,
-  "projectRoot": "/Users/al/Studio/projects/exfu_website/.claude/worktrees/intelligent-jang-cdf19f",
+  "lastScanned": 1784568461044,
+  "projectRoot": "/Users/al/Studio/projects/exfu_website/.claude/worktrees/exfu-plugin-improvements-4006a7",
   "techStack": {
     "languages": [
       {
@@ -65,21 +65,23 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 0,
-      "lastAccessed": 1781033690667,
+      "lastAccessed": 1784568460935,
       "keyFiles": []
     },
     "plugin": {
       "path": "plugin",
       "purpose": null,
-      "fileCount": 0,
-      "lastAccessed": 1781033690667,
-      "keyFiles": []
+      "fileCount": 1,
+      "lastAccessed": 1784568460935,
+      "keyFiles": [
+        "MORNING-HANDOVER.md"
+      ]
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
       "fileCount": 32,
-      "lastAccessed": 1781033690670,
+      "lastAccessed": 1784568460936,
       "keyFiles": [
         "_redirects",
         "about.md",
@@ -92,14 +94,14 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1781033690671,
+      "lastAccessed": 1784568460937,
       "keyFiles": []
     },
     "plugin/build": {
       "path": "plugin/build",
       "purpose": "Build output",
       "fileCount": 3,
-      "lastAccessed": 1781033690671,
+      "lastAccessed": 1784568460938,
       "keyFiles": [
         "README.md",
         "build.sh"
@@ -109,14 +111,14 @@
       "path": "plugin/src",
       "purpose": "Source code",
       "fileCount": 0,
-      "lastAccessed": 1781033690671,
+      "lastAccessed": 1784568460938,
       "keyFiles": []
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 12,
-      "lastAccessed": 1781033690671,
+      "lastAccessed": 1784568460939,
       "keyFiles": [
         "About.astro",
         "Approach.astro",
@@ -127,7 +129,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 5,
-      "lastAccessed": 1781033690672,
+      "lastAccessed": 1784568460939,
       "keyFiles": [
         "404.astro",
         "index.astro",
@@ -137,303 +139,159 @@
   },
   "hotPaths": [
     {
-      "path": "plugin/example/exfu/derived/index.json",
-      "accessCount": 11,
-      "lastAccessed": 1781042100058,
+      "path": "plugin/src/shared/skills/exfu-library/SKILL.md",
+      "accessCount": 15,
+      "lastAccessed": 1784571266808,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/librarian/nightly-index.md",
-      "accessCount": 8,
-      "lastAccessed": 1781041438769,
+      "path": "plugin/src/shared/resources/substrate-guide.md",
+      "accessCount": 13,
+      "lastAccessed": 1784571621077,
       "type": "file"
     },
     {
-      "path": "plugin/example/scopes/acme/scope.md",
-      "accessCount": 7,
-      "lastAccessed": 1781037995362,
+      "path": "plugin/src/shared/skills/exfu-migrate-to-dropbox/SKILL.md",
+      "accessCount": 5,
+      "lastAccessed": 1784632211233,
       "type": "file"
     },
     {
-      "path": "plugin/example/user/scope.md",
-      "accessCount": 7,
-      "lastAccessed": 1781038000202,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/scheduled-tasks/substrate-index/index.py",
-      "accessCount": 7,
-      "lastAccessed": 1781042040570,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/README.md",
-      "accessCount": 7,
-      "lastAccessed": 1781094418523,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/exfu/latest.txt",
-      "accessCount": 6,
-      "lastAccessed": 1781038009418,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/librarian/version-cleanup.md",
-      "accessCount": 6,
-      "lastAccessed": 1781041463687,
-      "type": "file"
-    },
-    {
-      "path": "plugin/planning/T3-scope-model.md",
+      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology.md",
       "accessCount": 4,
-      "lastAccessed": 1781037994604,
+      "lastAccessed": 1784571620133,
       "type": "file"
     },
     {
-      "path": "plugin/example/scopes/side-project/scope.md",
-      "accessCount": 4,
-      "lastAccessed": 1781038001135,
-      "type": "file"
-    },
-    {
-      "path": "plugin/planning/M2-substrate-redesign.md",
-      "accessCount": 4,
-      "lastAccessed": 1781053249116,
-      "type": "file"
-    },
-    {
-      "path": "plugin/planning/T1-overview.md",
+      "path": "plugin/src/team/skills/exfu-install-team/SKILL.md",
       "accessCount": 3,
-      "lastAccessed": 1781036662752,
+      "lastAccessed": 1784571625755,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/scope.md",
+      "path": "plugin/src/team-admin/skills/exfu-install-team-admin/SKILL.md",
       "accessCount": 3,
-      "lastAccessed": 1781037777637,
+      "lastAccessed": 1784571626743,
       "type": "file"
     },
     {
-      "path": "plugin/planning/M2.1-exfu-dashboard.md",
+      "path": "plugin/src/team-admin/skills/team-dropbox-folder-provisioning/SKILL.md",
       "accessCount": 3,
-      "lastAccessed": 1781053249723,
+      "lastAccessed": 1784571628146,
       "type": "file"
     },
     {
-      "path": "plugin/planning/T2-librarian-framework.md",
-      "accessCount": 3,
-      "lastAccessed": 1781053258505,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/what-is-a-scope.md",
-      "accessCount": 3,
-      "lastAccessed": 1781053333833,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/scope-md-format.md",
-      "accessCount": 3,
-      "lastAccessed": 1781053334703,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/templates/scope/ontology/agent.md",
+      "path": "plugin/src/shared/substrate/exfu/v0.3/readme.md",
       "accessCount": 2,
-      "lastAccessed": 1781037777474,
+      "lastAccessed": 1784570293861,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/context/agent.md",
+      "path": "plugin/src/shared/substrate/exfu/v0.3/principles.md",
       "accessCount": 2,
-      "lastAccessed": 1781037777590,
+      "lastAccessed": 1784570298616,
       "type": "file"
     },
     {
-      "path": "plugin/example/scopes/acme/scopes/q3-renewal/scope.md",
+      "path": "plugin/src/shared/resources/exfu-primer.md",
       "accessCount": 2,
-      "lastAccessed": 1781037795317,
+      "lastAccessed": 1784570392503,
       "type": "file"
     },
     {
-      "path": "plugin/example/user/todo/agent.md",
+      "path": "plugin/src/shared/resources/the-substrate-primer.md",
       "accessCount": 2,
-      "lastAccessed": 1781037800552,
+      "lastAccessed": 1784570447579,
       "type": "file"
     },
     {
-      "path": "plugin/example/scopes/acme/todo/agent.md",
+      "path": "plugin/src/shared/resources/ecosystem-references.md",
       "accessCount": 2,
-      "lastAccessed": 1781037801949,
+      "lastAccessed": 1784570460213,
       "type": "file"
     },
     {
-      "path": "plugin/planning/T2-exfu-dashboard.md",
+      "path": "plugin/src/shared/resources/CHANGELOG.md",
       "accessCount": 2,
-      "lastAccessed": 1781037807756,
+      "lastAccessed": 1784571228519,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/nesting.md",
+      "path": "plugin/src/solo/skills/exfu-install-solo/SKILL.md",
       "accessCount": 2,
-      "lastAccessed": 1781053335055,
+      "lastAccessed": 1784571619747,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/ontology/scope/version-resolution.md",
-      "accessCount": 2,
-      "lastAccessed": 1781053336191,
-      "type": "file"
-    },
-    {
-      "path": "plugin/planning/T3-convention-base.md",
+      "path": "plugin/src/shared/skills/substrate/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033792307,
+      "lastAccessed": 1784570145468,
       "type": "file"
     },
     {
-      "path": "plugin/planning/T3-versioning.md",
+      "path": "plugin/src/shared/skills/box-filesystem-management/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033802809,
+      "lastAccessed": 1784570159903,
       "type": "file"
     },
     {
-      "path": "plugin/planning/T3-example-prototype.md",
+      "path": "plugin/src/solo/scheduled-tasks/box-cleanup/TASK.md",
       "accessCount": 1,
-      "lastAccessed": 1781033807810,
+      "lastAccessed": 1784570160857,
       "type": "file"
     },
     {
-      "path": "plugin/planning/T3-nightly-index.md",
+      "path": "plugin/planning/v0.4-agent-library-rebrand.md",
       "accessCount": 1,
-      "lastAccessed": 1781033807977,
+      "lastAccessed": 1784570242233,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/readme.md",
+      "path": "plugin/src/shared/skills/exfu-dropbox-storage/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033847714,
+      "lastAccessed": 1784570764289,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/docs/agent.md",
+      "path": "plugin/src/team-admin/skills/team-box-folder-provisioning/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033851552,
+      "lastAccessed": 1784570882776,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/skills/agent.md",
+      "path": "plugin/src/team-admin/skills/team-repo-provisioning/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033852947,
+      "lastAccessed": 1784571627573,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/librarians/agent.md",
+      "path": "plugin/src/team-admin/skills/team-shared-skills-authoring/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033853910,
+      "lastAccessed": 1784571669625,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/todo/agent.md",
+      "path": "plugin/src/team-admin/skills/team-onboard-member/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033855352,
+      "lastAccessed": 1784571670601,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/reminders/agent.md",
+      "path": "plugin/src/team-admin/skills/exfu-upgrade-from-team-to-admin/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033856263,
+      "lastAccessed": 1784571671535,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/inbox/agent.md",
+      "path": "plugin/src/team-admin/resources/compliance-briefing.md",
       "accessCount": 1,
-      "lastAccessed": 1781033857211,
+      "lastAccessed": 1784571717992,
       "type": "file"
     },
     {
-      "path": "plugin/src/shared/substrate/templates/scope/databases/agent.md",
+      "path": "plugin/src/shared/skills/git-substrate-sync/SKILL.md",
       "accessCount": 1,
-      "lastAccessed": 1781033858600,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/templates/scope/visualisations/agent.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033859536,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/user/context/me/about.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033908077,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/teams/sales/projects/acme-q3-renewal/context/acme-overview.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033908672,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/context/principles.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033971547,
-      "type": "file"
-    },
-    {
-      "path": "plugin/src/shared/substrate/exfu/v0.3/context/recommendations.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033980036,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/CLAUDE.md",
-      "accessCount": 1,
-      "lastAccessed": 1781033993196,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/user/context/about-me.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034028793,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/user/ontology/ways-of-working.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034033698,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/acme/ontology/terminology.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034040750,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/acme/context/account-overview.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034047974,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/acme/scopes/q3-renewal/context/deal-brief.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034057355,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/side-project/context/readme.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034071001,
-      "type": "file"
-    },
-    {
-      "path": "plugin/example/scopes/side-project/inbox/readme.md",
-      "accessCount": 1,
-      "lastAccessed": 1781034072565,
+      "lastAccessed": 1784571718604,
       "type": "file"
     }
   ],

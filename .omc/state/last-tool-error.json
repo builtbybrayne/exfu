@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"ls -la ~/Downloads/exfu*.zip ~/Downloads/*.skill 2>/dev/null; echo ---; for f in ~/Downloads/exfu-*v0.3.0*.zip; do [ -f \\\"$f\\\" ] && printf \\\"%s: \\\" \\\"$f\\\" && (unzip -p \\\"$f\\\" \\\"*/skills/su...",
-  "error": "Exit code 1\n(eval):1: no matches found: /Users/al/Downloads/exfu*.zip\n---\n(eval):1: no matches found: /Users/al/Downloads/exfu-*v0.3.0*.zip",
-  "timestamp": "2026-06-10T13:14:44.841Z",
+  "tool_input_preview": "{\"command\":\"BOX=/private/tmp/ExFu/box/claude-exfu-0.3; DBX=/private/tmp/ExFu/dropbox/ExFu\\ncd \\\"$BOX\\\" && find . -type f ! -name '.DS_Store' ! -path './_trash/*' -print0 | while IFS= read -r -d '' f; ...",
+  "error": "Exit code 1\nexfu/derived/agent-registry.json\nexfu/derived/agent-log.json\nexfu/derived/index.json\nexfu/visualisations/dashboard/index.html",
+  "timestamp": "2026-07-21T11:47:18.485Z",
   "retry_count": 1
 }
