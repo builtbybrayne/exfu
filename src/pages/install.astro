@@ -4,22 +4,19 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/setup-pages.css';
 
-// Version numbers from plugin manifests
-const SOLO_VERSION = '0.4.0';
-const TEAM_VERSION = '0.4.0';
-const TEAM_ADMIN_VERSION = '0.4.0';
+// Public marketplace
+const MARKETPLACE_REPO = 'ExFu/exfu-marketplace';
+const MARKETPLACE_URL = 'https://github.com/ExFu/exfu-marketplace';
 
-const SOLO_DOWNLOAD_URL = `/downloads/exfu-solo-v${SOLO_VERSION}.zip`;
-const TEAM_DOWNLOAD_URL = `/downloads/exfu-team-v${TEAM_VERSION}.zip`;
-const TEAM_ADMIN_DOWNLOAD_URL = `/downloads/exfu-team-admin-v${TEAM_ADMIN_VERSION}.zip`;
+const MARKETPLACE_ADD_CMD = `/plugin marketplace add ${MARKETPLACE_REPO}`;
+const INSTALL_CMD = '/plugin install exfu-agent-library-solo@exfu';
 
-// TODO: Replace with canonical Anthropic plugin install docs URL when confirmed
-const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
+const PLUGIN_DOCS_URL = 'https://docs.claude.com/en/docs/claude-code/plugins';
 ---
 
 <BaseLayout
   title="Install — ExFu"
-  description="Download the ExFu plugins for Claude Code. Solo for individuals, Team for team members."
+  description="Install the ExFu Agent Library plugin for Claude from the public exfu marketplace."
 >
   <Nav />
   <main id="main">
@@ -28,102 +25,80 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
     <section class="ip-hero">
       <div class="ip-hero-inner section-container">
         <h1 class="ip-title">Install ExFu</h1>
-        <p class="ip-lede">Three Claude Code plugins. Pick the one that fits where you are.</p>
+        <p class="ip-lede">One plugin from a public marketplace. Your AI does the rest.</p>
       </div>
     </section>
 
-    <!-- Plugin overview cards -->
+    <!-- Step one: add the marketplace -->
+    <section class="ip-marketplace">
+      <div class="ip-marketplace-inner section-container">
+        <h2 class="ip-section-title reveal">First, add the marketplace</h2>
+        <p class="ip-marketplace-lede reveal">One command, once. Works in Claude Code and in Cowork on Claude Desktop.</p>
+
+        <div class="gs-copy-block reveal">
+          <pre id="cmd-marketplace" class="gs-prompt">{MARKETPLACE_ADD_CMD}</pre>
+          <button
+            class="gs-copy-btn"
+            type="button"
+            data-copy-target="cmd-marketplace"
+            aria-label="Copy command to clipboard"
+          >
+            <span class="gs-copy-btn-label">Copy</span>
+          </button>
+        </div>
+
+        <p class="ip-marketplace-note reveal">
+          That points Claude at the public <a href={MARKETPLACE_URL} target="_blank" rel="noopener noreferrer">{MARKETPLACE_REPO}</a> marketplace.
+        </p>
+      </div>
+    </section>
+
+    <!-- The plugin -->
     <section class="ip-plugins">
       <div class="ip-plugins-inner section-container">
+        <h2 class="ip-section-title reveal">Then, install the Agent Library</h2>
 
-        <div class="ip-plugin-grid">
-
-          <article class="ip-plugin-card reveal">
-            <div class="ip-plugin-header">
-              <h2 class="ip-plugin-name">ExFu Solo</h2>
-              <span class="ip-version">v{SOLO_VERSION}</span>
-            </div>
-            <p class="ip-plugin-desc">Personal Claude install for individuals. Your knowledge base, your preferences, your cloud drive.</p>
-            <a
-              href={SOLO_DOWNLOAD_URL}
-              class="ip-download-btn"
-              download
+        <article class="ip-plugin-card reveal">
+          <div class="ip-plugin-header">
+            <h3 class="ip-plugin-name">Agent Library</h3>
+          </div>
+          <p class="ip-plugin-desc">Your knowledge base, your preferences, and the Agent Librarians that keep it all organised. Claude as a real working collaborator.</p>
+          <div class="gs-copy-block">
+            <pre id="cmd-install" class="gs-prompt">{INSTALL_CMD}</pre>
+            <button
+              class="gs-copy-btn"
+              type="button"
+              data-copy-target="cmd-install"
+              aria-label="Copy install command to clipboard"
             >
-              Download Solo
-            </a>
-          </article>
-
-          <article class="ip-plugin-card reveal">
-            <div class="ip-plugin-header">
-              <h2 class="ip-plugin-name">ExFu Team</h2>
-              <span class="ip-version">v{TEAM_VERSION}</span>
-            </div>
-            <p class="ip-plugin-desc">Personal Claude install for team members. Your personal layer runs on top of your team's shared substrate.</p>
-            <a
-              href={TEAM_DOWNLOAD_URL}
-              class="ip-download-btn"
-              download
-            >
-              Download Team
-            </a>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Which plugin section -->
-    <section class="ip-which">
-      <div class="ip-which-inner section-container">
-        <h2 class="ip-section-title reveal">Which plugin is for me?</h2>
-
-        <div class="ip-which-grid">
-
-          <div class="ip-which-card reveal">
-            <h3 class="ip-which-name">Solo</h3>
-            <p>You're a founder, senior operator, or solo professional. You want Claude as a real working collaborator for yourself. Storage: your cloud drive.</p>
+              <span class="gs-copy-btn-label">Copy</span>
+            </button>
           </div>
+        </article>
 
-          <div class="ip-which-card reveal">
-            <h3 class="ip-which-name">Team</h3>
-            <p>You're joining a team that already has its substrate set up. You want your personal Claude on top of the shared one. Storage: your team's git repo.</p>
-          </div>
-
-          <div class="ip-which-card ip-which-card--secondary reveal">
-            <h3 class="ip-which-name">Team-admin</h3>
-            <p>You're the substrate champion for your team. You'll set up the shared substrate, design conventions, brief IT, and onboard colleagues. If that's not you, the team plugin is what you want.</p>
-            <p class="ip-which-admin-note">
-              <a href={TEAM_ADMIN_DOWNLOAD_URL} class="ip-admin-link" download>Download team-admin v{TEAM_ADMIN_VERSION}</a>
-            </p>
-          </div>
-
-        </div>
-
+        <p class="ip-marketplace-note reveal">
+          New to Claude plugins? <a href={PLUGIN_DOCS_URL} target="_blank" rel="noopener noreferrer">How plugins work</a>.
+        </p>
       </div>
     </section>
 
     <!-- Quick start -->
     <section class="ip-quickstart">
       <div class="ip-quickstart-inner section-container">
-        <h2 class="ip-section-title reveal">Quick start</h2>
+        <h2 class="ip-section-title reveal">Then what?</h2>
 
         <ol class="ip-steps reveal">
           <li>
             <span class="ip-step-num" aria-hidden="true">1</span>
-            <span>Download the plugin file above.</span>
+            <span>Restart Claude so the plugin loads.</span>
           </li>
           <li>
             <span class="ip-step-num" aria-hidden="true">2</span>
-            <span>Install it in Claude Code. (<a href={ANTHROPIC_PLUGIN_DOCS_URL} target="_blank" rel="noopener noreferrer">Plugin install instructions</a> {/* TODO: confirm Anthropic docs URL */})</span>
-          </li>
-          <li>
-            <span class="ip-step-num" aria-hidden="true">3</span>
-            <span>Run <code>/exfu</code> to start.</span>
+            <span>Say <strong>"get me set up"</strong>. Your AI takes it from there.</span>
           </li>
         </ol>
 
-        <p class="ip-stuck reveal">Questions? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
+        <p class="ip-stuck reveal">Not set up on your machine yet? Work through the <a href="/prepare">preparation steps</a> first. Questions? Email <a href="mailto:al@exfu.ai">al@exfu.ai</a>.</p>
 
       </div>
     </section>
@@ -133,10 +108,7 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
       <div class="ip-primer-inner section-container">
         <h2 class="ip-section-title reveal">Want to read first?</h2>
         <p class="reveal">
-          A substrate primer is bundled inside each plugin at <code>resources/substrate-primer.md</code>.
-          Once installed, Claude can walk you through it.
-          We'll publish a standalone version here separately.
-          {/* TODO: Add link to public primer when it's available */}
+          Primers and guides ship inside the plugin. Once it's installed, ask for the ExFu guides and Claude will walk you through what the library is, how the librarians work, and how to extend it yourself.
         </p>
       </div>
     </section>
@@ -161,61 +133,6 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
             <span class="ip-eco-desc">Independent community guide to getting the most from Claude.</span>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <!-- Archive (collapsed by default) -->
-    <section class="ip-archive">
-      <div class="ip-archive-inner section-container">
-        <details class="ip-archive-details">
-          <summary class="ip-archive-summary">Previous versions</summary>
-          <div class="ip-archive-body">
-            <ul class="ip-archive-list">
-              <li><a href="/downloads/exfu-solo-v0.3.4.zip">exfu-solo v0.3.4</a></li>
-              <li><a href="/downloads/exfu-team-v0.3.4.zip">exfu-team v0.3.4</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.3.4.zip">exfu-team-admin v0.3.4</a></li>
-              <li><a href="/downloads/exfu-solo-v0.3.3.zip">exfu-solo v0.3.3</a></li>
-              <li><a href="/downloads/exfu-team-v0.3.3.zip">exfu-team v0.3.3</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.3.3.zip">exfu-team-admin v0.3.3</a></li>
-              <li><a href="/downloads/exfu-solo-v0.3.2.zip">exfu-solo v0.3.2</a></li>
-              <li><a href="/downloads/exfu-team-v0.3.2.zip">exfu-team v0.3.2</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.3.2.zip">exfu-team-admin v0.3.2</a></li>
-              <li><a href="/downloads/exfu-solo-v0.3.0.zip">exfu-solo v0.3.0</a></li>
-              <li><a href="/downloads/exfu-team-v0.3.0.zip">exfu-team v0.3.0</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.3.0.zip">exfu-team-admin v0.3.0</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.8.zip">exfu-solo v0.2.8</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.8.zip">exfu-team v0.2.8</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.8.zip">exfu-team-admin v0.2.8</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.7.zip">exfu-solo v0.2.7</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.7.zip">exfu-team v0.2.7</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.7.zip">exfu-team-admin v0.2.7</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.6.zip">exfu-solo v0.2.6</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.6.zip">exfu-team v0.2.6</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.6.zip">exfu-team-admin v0.2.6</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.5.zip">exfu-solo v0.2.5</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.5.zip">exfu-team v0.2.5</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.5.zip">exfu-team-admin v0.2.5</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.4.zip">exfu-solo v0.2.4</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.4.zip">exfu-team v0.2.4</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.4.zip">exfu-team-admin v0.2.4</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.3.zip">exfu-solo v0.2.3</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.3.zip">exfu-team v0.2.3</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.3.zip">exfu-team-admin v0.2.3</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.2.zip">exfu-solo v0.2.2</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.2.zip">exfu-team v0.2.2</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.2.zip">exfu-team-admin v0.2.2</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.1.zip">exfu-solo v0.2.1</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.1.zip">exfu-team v0.2.1</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.1.zip">exfu-team-admin v0.2.1</a></li>
-              <li><a href="/downloads/exfu-solo-v0.2.0.zip">exfu-solo v0.2.0</a></li>
-              <li><a href="/downloads/exfu-team-v0.2.0.zip">exfu-team v0.2.0</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.2.0.zip">exfu-team-admin v0.2.0</a></li>
-              <li><a href="/downloads/exfu-solo-v0.1.0.zip">exfu-solo v0.1.0</a></li>
-              <li><a href="/downloads/exfu-team-v0.1.0.zip">exfu-team v0.1.0</a></li>
-              <li><a href="/downloads/exfu-team-admin-v0.1.0.zip">exfu-team-admin v0.1.0</a></li>
-            </ul>
-          </div>
-        </details>
       </div>
     </section>
 
@@ -257,11 +174,10 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
   /* ----------------------------------------
      Shared section scaffolding
   ---------------------------------------- */
+  .ip-marketplace,
   .ip-plugins,
-  .ip-which,
   .ip-primer,
-  .ip-ecosystem,
-  .ip-archive {
+  .ip-ecosystem {
     padding-block: var(--section-padding);
   }
 
@@ -271,11 +187,11 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
     color: var(--color-text-dark);
   }
 
-  .ip-plugins {
+  .ip-marketplace {
     background: var(--color-surface-light);
   }
 
-  .ip-which {
+  .ip-plugins {
     background: var(--color-surface-light);
     border-top: 1px solid rgba(138, 132, 124, 0.15);
   }
@@ -290,18 +206,42 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
     border-top: 1px solid rgba(138, 132, 124, 0.15);
   }
 
-  .ip-archive {
-    background: var(--color-surface-light);
-    border-top: 1px solid rgba(138, 132, 124, 0.15);
-  }
-
+  .ip-marketplace-inner,
   .ip-plugins-inner,
-  .ip-which-inner,
   .ip-quickstart-inner,
   .ip-primer-inner,
-  .ip-ecosystem-inner,
-  .ip-archive-inner {
+  .ip-ecosystem-inner {
     max-width: 50rem;
+  }
+
+  /* ----------------------------------------
+     Marketplace step
+  ---------------------------------------- */
+  .ip-marketplace-lede {
+    font-size: var(--text-body-lg);
+    line-height: 1.7;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    max-width: none;
+  }
+
+  .ip-marketplace-note {
+    font-size: var(--text-body);
+    line-height: 1.7;
+    color: var(--color-muted-dark);
+    margin-top: var(--space-md);
+    max-width: none;
+  }
+
+  .ip-marketplace-note a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .ip-marketplace-note a:hover {
+    color: var(--color-accent-hover);
   }
 
   .ip-section-title {
@@ -317,15 +257,10 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
   }
 
   /* ----------------------------------------
-     Plugin cards (solo + team)
+     Plugin card
   ---------------------------------------- */
-  .ip-plugin-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-  }
-
   .ip-plugin-card {
+    min-width: 0; /* let the command pre scroll instead of widening the grid track */
     background: white;
     border: 1px solid rgba(138, 132, 124, 0.2);
     border-radius: 8px;
@@ -348,98 +283,12 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
     color: var(--color-primary);
   }
 
-  .ip-version {
-    font-family: var(--font-body);
-    font-size: var(--text-small);
-    color: var(--color-muted);
-  }
-
   .ip-plugin-desc {
     font-size: var(--text-body);
     line-height: 1.65;
     color: var(--color-text-light);
     flex-grow: 1;
     max-width: none;
-  }
-
-  .ip-download-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--color-accent);
-    color: white;
-    font-family: var(--font-body);
-    font-size: var(--text-body);
-    font-weight: 500;
-    border-radius: 4px;
-    text-align: center;
-    transition: background-color var(--duration-fast) var(--ease-out);
-    align-self: flex-start;
-  }
-
-  .ip-download-btn:hover {
-    background: var(--color-accent-hover);
-  }
-
-  /* ----------------------------------------
-     Which plugin cards
-  ---------------------------------------- */
-  .ip-which-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-
-  .ip-which-card {
-    padding: var(--space-lg) var(--space-xl);
-    border-left: 3px solid var(--color-accent);
-    background: white;
-    border-radius: 0 6px 6px 0;
-  }
-
-  .ip-which-card--secondary {
-    border-left-color: var(--color-muted);
-    background: rgba(138, 132, 124, 0.04);
-  }
-
-  .ip-which-name {
-    font-family: var(--font-display);
-    font-size: var(--text-h3);
-    font-weight: 400;
-    color: var(--color-primary);
-    margin-bottom: var(--space-sm);
-  }
-
-  .ip-which-card--secondary .ip-which-name {
-    color: var(--color-muted-dark);
-  }
-
-  .ip-which-card p {
-    font-size: var(--text-body);
-    line-height: 1.65;
-    color: var(--color-text-light);
-    max-width: none;
-    margin-bottom: 0;
-  }
-
-  .ip-which-card--secondary p {
-    color: var(--color-muted-dark);
-  }
-
-  .ip-which-admin-note {
-    margin-top: var(--space-md);
-  }
-
-  .ip-admin-link {
-    font-size: var(--text-small);
-    color: var(--color-muted-dark);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-    transition: color var(--duration-fast) var(--ease-out);
-  }
-
-  .ip-admin-link:hover {
-    color: var(--color-primary);
   }
 
   /* ----------------------------------------
@@ -573,73 +422,78 @@ const ANTHROPIC_PLUGIN_DOCS_URL = 'https://docs.anthropic.com/claude/plugins';
     color: var(--color-muted-dark);
   }
 
-  /* ----------------------------------------
-     Archive
-  ---------------------------------------- */
-  .ip-archive-details {
-    border: 1px solid rgba(138, 132, 124, 0.2);
-    border-radius: 6px;
-    overflow: hidden;
+  /* Copy block sits flush inside the card; the card already spaces its children */
+  .ip-plugin-card .gs-copy-block {
+    margin-block: 0;
   }
 
-  .ip-archive-summary {
-    padding: var(--space-md) var(--space-lg);
-    font-family: var(--font-body);
-    font-size: var(--text-body);
-    font-weight: 500;
-    color: var(--color-muted-dark);
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    transition: color var(--duration-fast) var(--ease-out);
+  /* Commands are one-liners: never word-wrap them, scroll sideways instead */
+  .gs-copy-block {
+    min-width: 0;
+    max-width: 100%;
   }
 
-  .ip-archive-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .ip-archive-summary::before {
-    content: '▸';
-    font-size: 0.75em;
-    transition: transform var(--duration-fast) var(--ease-out);
-  }
-
-  details[open] .ip-archive-summary::before {
-    transform: rotate(90deg);
-  }
-
-  .ip-archive-summary:hover {
-    color: var(--color-primary);
-  }
-
-  .ip-archive-body {
-    padding: var(--space-md) var(--space-lg) var(--space-lg);
-    border-top: 1px solid rgba(138, 132, 124, 0.15);
-  }
-
-  .ip-archive-empty {
-    font-size: var(--text-body);
-    color: var(--color-muted);
-    font-style: italic;
-    max-width: none;
+  .gs-copy-block .gs-prompt {
+    white-space: pre;
+    word-break: normal;
+    overflow-x: auto;
+    scrollbar-width: thin;
   }
 
   /* ----------------------------------------
      Responsive
   ---------------------------------------- */
   @media (max-width: 640px) {
-    .ip-plugin-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ip-which-card {
-      padding: var(--space-md) var(--space-lg);
-    }
-
     .ip-steps li {
       gap: var(--space-sm);
     }
   }
 </style>
+
+
+<script>
+  // Copy-to-clipboard for the install commands
+  document.querySelectorAll<HTMLButtonElement>('.gs-copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const targetId = btn.getAttribute('data-copy-target');
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const text = target.textContent ?? '';
+      const label = btn.querySelector<HTMLElement>('.gs-copy-btn-label');
+      const originalLabel = label?.textContent ?? 'Copy';
+
+      const flashSuccess = () => {
+        if (label) label.textContent = 'Copied';
+        btn.setAttribute('data-copied', 'true');
+        window.setTimeout(() => {
+          if (label) label.textContent = originalLabel;
+          btn.removeAttribute('data-copied');
+        }, 1800);
+      };
+
+      try {
+        await navigator.clipboard.writeText(text);
+        flashSuccess();
+      } catch {
+        // Fallback for older browsers / non-secure contexts
+        const range = document.createRange();
+        range.selectNode(target);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+        try {
+          document.execCommand('copy');
+          flashSuccess();
+        } catch {
+          if (label) label.textContent = 'Copy failed';
+          window.setTimeout(() => {
+            if (label) label.textContent = originalLabel;
+          }, 1800);
+        }
+        sel?.removeAllRanges();
+      }
+    });
+  });
+</script>

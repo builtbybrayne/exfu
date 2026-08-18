@@ -185,8 +185,8 @@
   font-size: var(--text-small);
 }
 
-.gs-why-box-link,
-.gs-why-substrate-link {
+.gs-why-storage-link,
+.gs-why-library-link {
   margin-top: var(--space-md);
 }
 
