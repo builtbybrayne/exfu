@@ -2,7 +2,7 @@
 id: T1-overview
 plan_kind: thematic
 tier: 1
-status: draft
+status: active
 ---
 
 # T1 — The ExFu website

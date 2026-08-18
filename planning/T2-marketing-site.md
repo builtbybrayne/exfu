@@ -2,7 +2,7 @@
 id: T2-marketing-site
 plan_kind: thematic
 tier: 2
-status: draft
+status: active
 ---
 
 # T2 — Marketing site and setup journey
@@ -30,13 +30,13 @@ ready to sell.
   connectors.
 - /start: marketplace add + solo install commands, setup prompt, guides.
 - /install: solo-only, versionless, marketplace-first.
-- Retired: zip downloads (files unlinked in public/downloads), the
-  fetch-model `public/clients/` corpus, and the stale `plugin/` tree.
+- Retired: zip distribution entirely (public/downloads deleted
+  2026-08-18), the fetch-model `public/clients/` corpus, and the stale
+  `plugin/` tree.
 
 **Open threads.**
 
 - External library viewers (Obsidian, Tolaria): mention only after
   interop is actually verified (operator ruling, 2026-08-18).
-- public/downloads zips: unlinked but still served; decide their fate.
 - Nav "Install" link stays commented out until the journey should be
   public.
